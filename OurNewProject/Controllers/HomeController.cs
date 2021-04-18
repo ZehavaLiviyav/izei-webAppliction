@@ -15,7 +15,7 @@ namespace OurNewProject.Controllers
 
         public HomeController(ILogger<HomeController> logger)
         {
-           
+           // comment
             _logger = logger;
         }
 
