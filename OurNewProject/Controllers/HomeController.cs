@@ -15,6 +15,7 @@ namespace OurNewProject.Controllers
 
         public HomeController(ILogger<HomeController> logger)
         {
+            int x = 0;
             _logger = logger;
         }
 
