@@ -28,11 +28,14 @@
                 <input type="submit" value="Sign up" class="btn btn-primary" />
             </div>
         </form>
+
+        <div class="text-danger">@ViewBag.Error </div>
+
     </div>
 </div>
 
 <div>
-    Already registered? <a asp-action="LogIn">Click here </a>
+    Already registered? <a asp-action="LogIn">Click here to Log In </a>
 </div>
 
 @section Scripts {

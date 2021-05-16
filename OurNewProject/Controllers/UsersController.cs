@@ -36,9 +36,21 @@ namespace OurNewProject.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(user);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+
+                var q = _context.User.FirstOrDefault(u => u.UserName == user.UserName);
+
+                if (q == null)
+                {
+                    _context.Add(user);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index),"Home");
+
+                }
+                else
+                {
+                    ViewData["Eror"] = "Username is already taken";
+                }
+                
             }
             return View(user);
         }

@@ -15,6 +15,7 @@ namespace OurNewProject.Models
             Client,
             Admin
         }
+        //
 
        public int Id { get; set; }
 
