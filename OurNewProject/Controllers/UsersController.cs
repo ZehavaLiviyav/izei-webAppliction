@@ -48,7 +48,7 @@ namespace OurNewProject.Controllers
                 }
                 else
                 {
-                    ViewData["Eror"] = "Username is already taken";
+                    ViewData["Error"] = "Username is already taken";
                 }
                 
             }
