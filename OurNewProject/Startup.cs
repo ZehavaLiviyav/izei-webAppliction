@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using OurNewProject.Data;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace OurNewProject
 {
@@ -28,8 +29,23 @@ namespace OurNewProject
             services.AddControllersWithViews();
 
             services.AddDbContext<OurNewProjectContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("OurNewProjectContext")));
+                        options.UseSqlServer(Configuration.GetConnectionString("OurNewProjectContext")));
+
+
+
+            services.AddSession(options => 
+            { options.IdleTimeout = TimeSpan.FromMinutes(10); });
+
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(
+                options =>
+                { options.LoginPath = "/Users/LogIn";
+                    options.AccessDeniedPath = "/Users/AccessDenied"; 
+                });
+
         }
+
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -49,6 +65,8 @@ namespace OurNewProject
 
             app.UseRouting();
 
+
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
