@@ -27,10 +27,20 @@ namespace OurNewProject.Controllers
             return View();
         }
 
+        public IActionResult Rishon(){ return View();}
+        public IActionResult BeerS() { return View(); }
+        public IActionResult Eilat() { return View(); }
+        public IActionResult Jerusalem() { return View(); }
+        public IActionResult RG() { return View(); }
+        public IActionResult Shoam() { return View(); }
+        public IActionResult TA() { return View(); }
+        public IActionResult Mevasseret() { return View(); }
 
         [Authorize]
         public IActionResult Privacy()
         {
+
+
             return View();
         }
 

@@ -8,8 +8,6 @@ namespace OurNewProject.Models
 {
     public class User
     {
-
-
         public enum UserType
         {
             Client,

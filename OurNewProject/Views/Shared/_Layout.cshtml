@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html dir="rtl">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
+
+    <style>
+        body {
+            background-color: #20c997; /*color of the background*/
+        }
+    </style>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
@@ -24,20 +30,43 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">אודות</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">צור קשר</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">גלריה</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">חפשו אותנו ברשתות החברתיות</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">סניפים</a>
+                        </li>
 
                         @if (Context.User != null && Context.User.Claims != null && Context.User.Claims.Count() > 0)
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Logout">Log Out</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Logout">התנתקות</a>
                             </li>
 
                         }
-                      else
+                        else
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="LogIn">Log In</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="LogIn">התחברות</a>
                             </li>
                         }
+
+                    <li class="nav-item">
+                        @*<img src="https://did.li/dtGNf" width="35" height="35" class="img-fluid">*@
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">
+                            <img src="https://did.li/dtGNf" width="30" height="30" class="img-fluid">
+                        </a>
+                    </li>
+
 
                     </ul>
                 </div>
