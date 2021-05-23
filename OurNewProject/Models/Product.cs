@@ -7,11 +7,12 @@ namespace OurNewProject.Models
 {
     public class Product
     {
-        public String ProducyName { get; set; }
+        public string ProducyName { get; set; }
         public int Price { get; set; }
         public double Size { get; set; }
 
-       
+        //../photos\---
+        public string Image { get; set; }
 
 
     }

@@ -35,12 +35,11 @@ namespace OurNewProject.Controllers
         public IActionResult Shoam() { return View(); }
         public IActionResult TA() { return View(); }
         public IActionResult Mevasseret() { return View(); }
+        public IActionResult Hyadata() { return View(); }
 
         [Authorize]
         public IActionResult Privacy()
         {
-
-
             return View();
         }
 
