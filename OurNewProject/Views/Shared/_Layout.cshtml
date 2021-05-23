@@ -6,19 +6,22 @@
     <title>@ViewData["Title"] - OurNewProject</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+  
 </head>
-<body>
 
+<body>
+@*
     <style>
         body {
             background-color: #e8ac18 /*color of the background*/
         }
-    </style>
+    </style>*@
+
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                
-                -action="Index">OurNewProject</a>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-info border-bottom box-shadow mb-3">
+            <div class="container" >
+
+                <a OurNewProject</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -50,23 +53,23 @@
                         @if (Context.User != null && Context.User.Claims != null && Context.User.Claims.Count() > 0)
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Logout">התנתקות</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Logout">Logout</a>
                             </li>
 
                         }
                         else
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="LogIn">התחברות</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="LogIn">Login</a>
                             </li>
                         }
 
-                    <li class="nav-item">
-                        @*<img src="https://did.li/dtGNf" width="35" height="35" class="img-fluid">*@
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">
-                            <img src="https://did.li/dtGNf" width="30" height="30" class="img-fluid">
-                        </a>
-                    </li>
+                        <li class="nav-item">
+                            @*<img src="https://did.li/dtGNf" width="35" height="35" class="img-fluid">*@
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">
+                                <img src="https://i.imagesup.co/images2/4e554b6f1ad288006cd0715529e7006c602ac071.png" width="30" height="30" class="img-fluid">
+                            </a>
+                        </li>
 
 
                     </ul>
