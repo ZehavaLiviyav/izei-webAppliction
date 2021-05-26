@@ -1,24 +1,167 @@
-﻿@{
+﻿<!DOCTYPE html>
+@{
     ViewData["Title"] = "Home Page";
 }
+<html dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - OurNewProject</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+ 
+    <link rel="stylesheet" href="~/css/hayadata.css" />
+</head>
 
-<div class="text-center">
-
-    <h1 class="display-4"> הידעת?  </h1>
-
+<body>
     @*
-        <div id="background-wrap">
-        <div class="bubble x1"></div>
-        <div class="bubble x2"></div>
-        <div class="bubble x3"></div>
-        <div class="bubble x4"></div>
-        <div class="bubble x5"></div>
-        <div class="bubble x6"></div>
-        <div class="bubble x7"></div>
-        <div class="bubble x8"></div>
-        <div class="bubble x9"></div>
-        <div class="bubble x10"></div>
+        <style>
+            body {
+                background-color: #ffc5d9 /*color of the background*/
+            }
+        </style>*@
 
-    </div>*@
+    <header>
+        <div class="text-center"> <h1 class="display-4"> הידעת?  </h1></div>
+    </header>
+    <h1> הידעת? </h1>
+ @*   <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <img src="https://i.postimg.cc/tTDvHXDX/rover.jpg" alt="rover" />
+            </div>
+            <div class="card-body">
+                <span class="tag tag-teal">
+                    Technology
+                </span>
+                <h4>Why is the Tesla Cybertruck desigined the way it is?</h4>
+                <p>An exploration into the trucks polarising design</p>
+                <div class="user">
+                    <img src="https://i.postimg.cc/Hk7N71W2/user-1.jpg" alt="user 1" />
+                    <div class="user-info">
+                        <h5>Carrie Brewer</h5>
+                        <small>2h ago</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <img src="https://i.postimg.cc/ZKQgR5mn/ballons.jpg" alt="ballons" />
+            </div>
+            <div class="card-body">
+                <span class="tag tag-purple">
+                    Popular
+                </span>
+                <h4>How To Keep Going When You Dont Know What's Next?</h4>
+                <p>
+                    The future can be scary, but there are ways to deal with that fear
+                </p>
+                <div class="user">
+                    <img src="https://i.postimg.cc/tgQM3vYH/user-2.jpg" alt="user 2" />
+                    <div class="user-info">
+                        <h5>Jerome Walton</h5>
+                        <small>Yesterday</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <img src="https://i.postimg.cc/MTz34c7P/city.jpg" alt="city" />
+            </div>
+            <div class="card-body">
+                <span class="tag tag-pink">
+                    Design
+                </span>
+                <h4>10 Rules Of Dashboard Design</h4>
+                <p>Dashboard design guidelines</p>
+                <div class="user">
+                    <img src="https://i.postimg.cc/7L3Qm12J/user-3.jpg" alt="user 3" />
+                    <div class="user-info">
+                        <h5>Lewis Deniels</h5>
+                        <small>23 Dec 2019</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+*@
+    @* ---------------------------------------------------------------*@
 
-</div>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <img src="https://www.colbonews.co.il/wp-content/uploads/2018/09/c275d1d8cc344914602ce4aee6213e2b-e1536750971623.jpg" alt="rover" />
+            </div>
+            <div class="card-body">
+                <span class="tag tag-teal">
+                    איפה נולדתי?
+                </span>
+                <h4 class="text-right">
+                    
+                    הגלידה הראשונה לא הומצאה באיטליה כמו שנהוג לחשוב, אלא בסין.
+                    היא הייתה פשוט ערבוב של מיצי פירות עם קרח.
+                </h4>
+                @*<p>An exploration into the trucks polarising design</p>*@
+               @* <div class="user">
+                    <img src="https://i.postimg.cc/Hk7N71W2/user-1.jpg" alt="user 1" />
+                    <div class="user-info">
+                        <h5>Carrie Brewer</h5>
+                        <small>2h ago</small>
+                    </div>
+                </div>*@
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <img src="https://prod-wolt-venue-images-cdn.wolt.com/5f43ac125060d8157b9a3c1f/019a6748-f68b-11ea-9984-1e09a232bab7_menu_2.jpg" alt="ballons" />
+            </div>
+            <div class="card-body">
+                <span class="tag tag-purple">
+                    הדיאטה החלומית?
+                </span>
+                <h4>
+                    נתקלנו כבר בדיאטת חלבונים ובדיאטת כרוב,
+                    אבל אין ספק שהכי שמחנו לשמוע על דיאטת גלידה!
+                    מי שדוגל בדיאטה הזאת בטח לא שמע שכוס אחת של גלידת וניל שווה 273 קלוריות.
+                </h4>
+                <p>
+                    The future can be scary, but there are ways to deal with that fear
+                </p>
+                @*<div class="user">
+                    <img src="https://i.postimg.cc/tgQM3vYH/user-2.jpg" alt="user 2" />
+                    <div class="user-info">
+                        <h5>Jerome Walton</h5>
+                        <small>Yesterday</small>
+                    </div>
+                </div>*@
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <img src="https://glidatstrauss.co.il/wp-content/uploads/2019/01/Main_1920x505.png" alt="city" />
+            </div>
+            <div class="card-body">
+                <span class="tag tag-pink">
+                    Design
+                </span>
+                <h4>10 Rules Of Dashboard Design</h4>
+                <p>Dashboard design guidelines</p>
+                @*<div class="user">
+                    <img src="https://i.postimg.cc/7L3Qm12J/user-3.jpg" alt="user 3" />
+                    <div class="user-info">
+                        <h5>Lewis Deniels</h5>
+                        <small>23 Dec 2019</small>
+                    </div>
+                </div>*@
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
