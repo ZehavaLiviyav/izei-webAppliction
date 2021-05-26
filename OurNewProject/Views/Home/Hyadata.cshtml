@@ -2,13 +2,16 @@
 @{
     ViewData["Title"] = "Home Page";
 }
+
+
 <html dir="rtl">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - OurNewProject</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
- 
+  @*  <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+
     <link rel="stylesheet" href="~/css/hayadata.css" />
 </head>
 
@@ -23,141 +26,164 @@
     <header>
         <div class="text-center"> <h1 class="display-4"> הידעת?  </h1></div>
     </header>
-    <h1> הידעת? </h1>
- @*   <div class="container">
-        <div class="card">
-            <div class="card-header">
-                <img src="https://i.postimg.cc/tTDvHXDX/rover.jpg" alt="rover" />
-            </div>
-            <div class="card-body">
-                <span class="tag tag-teal">
-                    Technology
-                </span>
-                <h4>Why is the Tesla Cybertruck desigined the way it is?</h4>
-                <p>An exploration into the trucks polarising design</p>
-                <div class="user">
+   
+    <div class="text-right">
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    <img src="https://www.colbonews.co.il/wp-content/uploads/2018/09/c275d1d8cc344914602ce4aee6213e2b-e1536750971623.jpg" alt="rover" />
+                </div>
+                <div class="card-body">
+                    <span class="tag tag-teal">
+                        איפה נולדתי?
+                    </span>
+                    <h4 class="text-right">
+                        הגלידה הראשונה לא הומצאה באיטליה כמו שנהוג לחשוב, אלא בסין.
+                        היא הייתה פשוט ערבוב של מיצי פירות עם קרח.
+                    </h4>
+                    @*<p>An exploration into the trucks polarising design</p>*@
+                    @* <div class="user">
                     <img src="https://i.postimg.cc/Hk7N71W2/user-1.jpg" alt="user 1" />
                     <div class="user-info">
                         <h5>Carrie Brewer</h5>
                         <small>2h ago</small>
                     </div>
+                </div>*@
                 </div>
             </div>
-        </div>
-        <div class="card">
-            <div class="card-header">
-                <img src="https://i.postimg.cc/ZKQgR5mn/ballons.jpg" alt="ballons" />
-            </div>
-            <div class="card-body">
-                <span class="tag tag-purple">
-                    Popular
-                </span>
-                <h4>How To Keep Going When You Dont Know What's Next?</h4>
-                <p>
-                    The future can be scary, but there are ways to deal with that fear
-                </p>
-                <div class="user">
-                    <img src="https://i.postimg.cc/tgQM3vYH/user-2.jpg" alt="user 2" />
-                    <div class="user-info">
-                        <h5>Jerome Walton</h5>
-                        <small>Yesterday</small>
-                    </div>
+            <div class="card">
+                <div class="card-header">
+                    <img src="https://prod-wolt-venue-images-cdn.wolt.com/5f43ac125060d8157b9a3c1f/019a6748-f68b-11ea-9984-1e09a232bab7_menu_2.jpg" alt="ballons" />
                 </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-header">
-                <img src="https://i.postimg.cc/MTz34c7P/city.jpg" alt="city" />
-            </div>
-            <div class="card-body">
-                <span class="tag tag-pink">
-                    Design
-                </span>
-                <h4>10 Rules Of Dashboard Design</h4>
-                <p>Dashboard design guidelines</p>
-                <div class="user">
-                    <img src="https://i.postimg.cc/7L3Qm12J/user-3.jpg" alt="user 3" />
-                    <div class="user-info">
-                        <h5>Lewis Deniels</h5>
-                        <small>23 Dec 2019</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-*@
-    @* ---------------------------------------------------------------*@
+                <div class="card-body">
+                    <span class="tag tag-purple">
+                        הדיאטה החלומית?
+                    </span>
+                    <h4>
+                        נתקלנו כבר בדיאטת חלבונים ובדיאטת כרוב,
+                        אבל אין ספק שהכי שמחנו לשמוע על דיאטת גלידה!
+                    </h4>
+                    <h4> מי שדוגל בדיאטה הזאת בטח לא שמע שכוס אחת של גלידת וניל שווה 273 קלוריות.</h4>
 
-    <div class="container">
-        <div class="card">
-            <div class="card-header">
-                <img src="https://www.colbonews.co.il/wp-content/uploads/2018/09/c275d1d8cc344914602ce4aee6213e2b-e1536750971623.jpg" alt="rover" />
+                </div>
             </div>
-            <div class="card-body">
-                <span class="tag tag-teal">
-                    איפה נולדתי?
-                </span>
-                <h4 class="text-right">
+            <div class="card">
+                <div class="card-header">
+                    <img src="https://glidatstrauss.co.il/wp-content/uploads/2019/01/Main_1920x505.png" alt="city" />
+                </div>
+                <div class="card-body">
+                    <span class="tag tag-pink">
+                        למה דווקא גלידה?
+                    </span>
+                    <h4>
+                        ממציא המילה "גלידה" הוא כמובן אליעזר בן-יהודה.
+                    </h4>
+                    <h4>
+                        הוא יצר אותה על המשקל של המילה "לביבה" עם השורש ג.ל.ד המתייחס לנוזל שהתקשה.
+                    </h4>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <img src="https://glidatstrauss.co.il/wp-content/uploads/2019/01/Main_1920x505.png" alt="city" />
+                </div>
+                <div class="card-body">
+                    <span class="tag tag-pink">
+                        איזה קור!
+                    </span>
+                    <h4>
+                        חוויתם פעם "Brain freeze", או "קיפאון מוחי" כמו שעלינו לקרוא לזה בעברית?
+
+                    </h4>
+                    <h4>
+                        אם כן, תדעו שזה קרה לכם בגלל שהגלידה נגעה בתקרת הפה שלכם, והטמפרטורה הנמוכה שלה כיווצה את כלי הדם באזור.
+                    </h4>
+                    <h4>
+                        השחרור הפתאומי של כלי הדם האלה לאחר מכן הוא הגורם לכאב.
+                    </h4>
+                </div>
+            </div>
+
+
+
+            <div class="card">
+                <div class="card-header">
+                    <img src="https://glidatstrauss.co.il/wp-content/uploads/2019/01/Main_1920x505.png" alt="city" />
+                </div>
+                <div class="card-body">
+                    <span class="tag tag-pink">
+                        מהיכן הגיע הגביע?
+                    </span>
+                    <h4>
+                        ביריד העולמי של סיינט לואיס בשנת 1904 אזלו לאחד מדוכני הגלידה כלי ההגשה,
+                        והיה עליו לשתף פעולה עם דוכן שכן שמכרו בו מאפה וופל בצורת חרוט.
+
+                    </h4>
+                    <h4>
+                        שיתוף הפעולה של השניים יצר את גביע הגלידה ממנו אנחנו נהנים עד היום.
+                    </h4>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <img src="https://glidatstrauss.co.il/wp-content/uploads/2019/01/Main_1920x505.png" alt="city" />
+                </div>
+                <div class="card-body">
+                    <span class="tag tag-pink">
+                        יום וחודש הגלידה
+                    </span>
+                    <h4>
+                        מדינה שמייצרת את הכמות הגדולה ביותר של גלידה היא ארה"ב, וכנראה בגלל זה מציינים שם במהלך כל חודש יולי את חודש הגלידה הלאומי.
+                    </h4>
+                    <h4> בנוסף, ה-4 בפברואר הוא יום ה"גלידה לארוחת בוקר".</h4>
+                    <h4> אה והאמריקאים כל כך אוהבים גלידה, שאת סיומה של מלחמת העולם השנייה הם חגגו באכילתה.</h4>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="card-header">
+                    <img src="https://prod-wolt-venue-images-cdn.wolt.com/5f43ac125060d8157b9a3c1f/019a6748-f68b-11ea-9984-1e09a232bab7_menu_2.jpg" alt="ballons" />
+                </div>
+                <div class="card-body">
+                    <span class="tag tag-purple">
+                        גלידה בטעם פירה
+                    </span>
+                    <h4>כשתוכניות בישול הפכו פופולריות בימיה המוקדמים של הטלוויזיה, בחלק מהמתכונים נהגו להחליף את הגלידה במחית תפוחי-אדמה. </h4>
+                    <h4> למה? </h4>
+                    <h4>מכיוון שהגלידה נמסה מהר מדי בגלל התאורה וזה לא הצטלם כל כך טוב. </h4>
+
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <img src="https://prod-wolt-venue-images-cdn.wolt.com/5f43ac125060d8157b9a3c1f/019a6748-f68b-11ea-9984-1e09a232bab7_menu_2.jpg" alt="ballons" />
+                </div>
+                <div class="card-body">
+                    <span class="tag tag-purple">
+                        שם מקור?
+                    </span>
+                    <h4> במקור נקראה הגלידה באנגלית "Cream ice" ! </h4>
+
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <img src="https://www.colbonews.co.il/wp-content/uploads/2018/09/c275d1d8cc344914602ce4aee6213e2b-e1536750971623.jpg" alt="rover" />
+                </div>
+                <div class="card-body">
+                    <span class="tag tag-teal">
+                       נולדו עם כפית של זהב בפה
+                    </span>
+                    <h4> טועמי גלידה טועמים את הגלידה בעזרת כפית מזהב, כדי שלא ירגישו שום סוג של טעם לוואי שעלול להיות בכפית רגילה.</h4>
                     
-                    הגלידה הראשונה לא הומצאה באיטליה כמו שנהוג לחשוב, אלא בסין.
-                    היא הייתה פשוט ערבוב של מיצי פירות עם קרח.
-                </h4>
-                @*<p>An exploration into the trucks polarising design</p>*@
-               @* <div class="user">
-                    <img src="https://i.postimg.cc/Hk7N71W2/user-1.jpg" alt="user 1" />
-                    <div class="user-info">
-                        <h5>Carrie Brewer</h5>
-                        <small>2h ago</small>
-                    </div>
-                </div>*@
+                </div>
             </div>
-        </div>
-        <div class="card">
-            <div class="card-header">
-                <img src="https://prod-wolt-venue-images-cdn.wolt.com/5f43ac125060d8157b9a3c1f/019a6748-f68b-11ea-9984-1e09a232bab7_menu_2.jpg" alt="ballons" />
-            </div>
-            <div class="card-body">
-                <span class="tag tag-purple">
-                    הדיאטה החלומית?
-                </span>
-                <h4>
-                    נתקלנו כבר בדיאטת חלבונים ובדיאטת כרוב,
-                    אבל אין ספק שהכי שמחנו לשמוע על דיאטת גלידה!
-                    מי שדוגל בדיאטה הזאת בטח לא שמע שכוס אחת של גלידת וניל שווה 273 קלוריות.
-                </h4>
-                <p>
-                    The future can be scary, but there are ways to deal with that fear
-                </p>
-                @*<div class="user">
-                    <img src="https://i.postimg.cc/tgQM3vYH/user-2.jpg" alt="user 2" />
-                    <div class="user-info">
-                        <h5>Jerome Walton</h5>
-                        <small>Yesterday</small>
-                    </div>
-                </div>*@
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-header">
-                <img src="https://glidatstrauss.co.il/wp-content/uploads/2019/01/Main_1920x505.png" alt="city" />
-            </div>
-            <div class="card-body">
-                <span class="tag tag-pink">
-                    Design
-                </span>
-                <h4>10 Rules Of Dashboard Design</h4>
-                <p>Dashboard design guidelines</p>
-                @*<div class="user">
-                    <img src="https://i.postimg.cc/7L3Qm12J/user-3.jpg" alt="user 3" />
-                    <div class="user-info">
-                        <h5>Lewis Deniels</h5>
-                        <small>23 Dec 2019</small>
-                    </div>
-                </div>*@
-            </div>
+
         </div>
     </div>
-
 </body>
 </html>
 
