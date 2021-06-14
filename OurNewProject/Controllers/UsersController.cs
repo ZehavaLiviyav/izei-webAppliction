@@ -133,7 +133,19 @@ namespace OurNewProject.Controllers
 
 
 
-                // ===============================================================================================
+        // ===============================================================================================
 
-            }
+        /*
+                public void DeleteUser(User user)
+                {
+                    var a = _context.User.FirstOrDefault(u => u.UserName == user.UserName && u.Password == user.Password);
+
+                    User use = _context.User.Find(a);
+
+
+                }*/
+        public IActionResult Delete() { return View(); }
+        public IActionResult Edit() { return View(); }
+
+    }
 }
