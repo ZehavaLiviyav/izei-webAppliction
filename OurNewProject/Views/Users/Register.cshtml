@@ -2,45 +2,89 @@
 
 @{
     ViewData["Title"] = "Register";
-    Layout = "_LogInLayout";
+    // Layout = "_LogInLayout";
 }
+@*
+    <h1>Sign up</h1>
 
-<h1>Sign up</h1>
+
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Register">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="UserName" class="control-label"></label>
+                    <input asp-for="UserName" class="form-control" />
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password" class="control-label"></label>
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Sign up" class="btn btn-primary" />
+                </div>
+            </form>
+
+            @if (ViewBag.Error != null)
+            {
+                <div class="text-danger">@ViewBag.Error </div>
+
+            }
+
+        </div>
+    </div>
+
+    <div>
+        Already registered? <a asp-action="LogIn">Click here to Log In </a>
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }*@
 
 
 <hr />
-<div class="row">
-    <div class="col-md-4">
+
+
+<div id="login-box">
+    <div class="left">
+        <h1>Sign up</h1>
         <form asp-action="Register">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
             <div class="form-group">
-                <label asp-for="UserName" class="control-label"></label>
-                <input asp-for="UserName" class="form-control" />
+                <input asp-for="UserName" class="form-control" placeholder="Username" type="text" />
                 <span asp-validation-for="UserName" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
+                <input asp-for="Password" class="form-control" placeholder="Password" type="password" />
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
 
-            <div class="form-group">
-                <input type="submit" value="Sign up" class="btn btn-primary" />
+            <input type="submit" value="Register" class="btn btn-primary" />
+            <div>
+                <br />
+                Already a member ?<br /><a asp-action="Login">Click here</a> to login.
             </div>
         </form>
-
         @if (ViewBag.Error != null)
         {
             <div class="text-danger">@ViewBag.Error </div>
-
         }
-
     </div>
+
+    <div class="right">
+        <br /><br /><br /><br /><br /><br />
+        <button class="social-signin facebook">Log in with facebook</button>
+    </div>
+    <div class="or">OR</div>
 </div>
 
-<div>
-    Already registered? <a asp-action="LogIn">Click here to Log In </a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

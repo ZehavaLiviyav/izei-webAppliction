@@ -9,8 +9,8 @@ using OurNewProject.Data;
 namespace OurNewProject.Migrations
 {
     [DbContext(typeof(OurNewProjectContext))]
-    [Migration("20210516132426_Int")]
-    partial class Int
+    [Migration("20210622192054_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

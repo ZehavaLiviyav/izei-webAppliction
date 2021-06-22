@@ -13,7 +13,8 @@ namespace OurNewProject.Data
             : base(options)
         {
         }
-
         public DbSet<OurNewProject.Models.User> User { get; set; }
+
+       // public DbSet<OurNewProject.Models.User> User { get; set; }
     }
 }

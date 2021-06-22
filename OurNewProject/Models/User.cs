@@ -5,19 +5,19 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace OurNewProject.Models
-{
-    public class User
-    {
-        public enum UserType
+{ 
+    public enum UserType
         {
             Client,
             Admin
         }
         //
+    public class User
+    {
+       
+        public int Id { get; set; }
 
-       public int Id { get; set; }
 
- 
         [Required]
         public String UserName { get; set; }
 
