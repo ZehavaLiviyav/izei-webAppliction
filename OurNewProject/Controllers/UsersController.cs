@@ -293,14 +293,43 @@ namespace OurNewProject.Controllers
 
         // ===============================================================================================
 
-        /*
-                public void DeleteUser(User user)
-                {
-                    var a = _context.User.FirstOrDefault(u => u.UserName == user.UserName && u.Password == user.Password);
-                    User use = _context.User.Find(a);
-                }*/
-        public IActionResult Delete() { return View(); }
-        public IActionResult Edit() { return View(); }
+
+        // GET: Users/Delete/5
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var user = await _context.User
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return View(user);
+        }
+
+        // POST: Users/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var user = await _context.User.FindAsync(id);
+            _context.User.Remove(user);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+
+
+        // GET: Users/Create
+        public IActionResult Create()
+        {
+            return View();
+        }
 
     }
 }

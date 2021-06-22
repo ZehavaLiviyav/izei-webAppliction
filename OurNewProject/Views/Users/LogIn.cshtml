@@ -6,39 +6,43 @@
 
 <h1>Login</h1>
 
-
-<div id="login-box">
-    <div class="left">
-        <h1>Login</h1>
-        <form asp-action="Login">
-
-            <input asp-for="UserName" class="form-control" placeholder="Username" />
-            <input asp-for="Password" class="form-control" placeholder="Password" />
-            <input type="submit" value="Login" class="btn btn-primary" />
+@*<head>
+    <link rel="stylesheet" href="~/css/loginpage.css" />
+</head>*@
 
 
+    <div id="login-box">
+        <div class="left">
+            <h1>Login</h1>
+            <form asp-action="Login">
 
-            <div>
-                <br />
-                Not part of the family ?<br />
-                <a asp-action="Register">Click here</a> to join.
-            </div>
+                <input asp-for="UserName" class="form-control" placeholder="Username" />
+                <input asp-for="Password" class="form-control" placeholder="Password" />
+                <input type="submit" value="Login" class="btn btn-primary" />
 
-        </form>
 
-        @if (ViewBag.Error != null)
-        {
-            <div class="text-danger">@ViewBag.Error </div>
-        }
+
+                <div>
+                    <br />
+                    Not part of the family ?<br />
+                    <a asp-action="Register">Click here</a> to join.
+                </div>
+
+            </form>
+
+            @if (ViewBag.Error != null)
+            {
+                <div class="text-danger">@ViewBag.Error </div>
+            }
+        </div>
+
+        <div class="right">
+            <br /><br /><br /><br /><br /><br />
+            <button class="social-signin facebook">Log in with facebook</button>
+
+        </div>
+        <div class="or">OR</div>
     </div>
-
-    <div class="right">
-        <br /><br /><br /><br /><br /><br />
-        <button class="social-signin facebook">Log in with facebook</button>
-
-    </div>
-    <div class="or">OR</div>
-</div>
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }
