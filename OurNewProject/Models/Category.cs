@@ -6,17 +6,12 @@ using System.Threading.Tasks;
 
 namespace OurNewProject.Models
 {
-    public class Branch
+    public class Category
     {
+        [Key]
         public int Id { get; set; }
-        public String BranchName { get; set; }
-
-        public String Address { get; set; }
-
-        public String PhoneNumber { get; set; }
-
-        public String OcHours{ get; set; }
-
-
+        public string Name { get; set; }
+        [Display(Name = "Products")]
+        public List<Product> myProducts { get; set; }
     }
 }

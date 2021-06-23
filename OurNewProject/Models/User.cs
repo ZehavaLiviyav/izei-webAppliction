@@ -15,6 +15,7 @@ namespace OurNewProject.Models
     public class User
     {
        
+        [Key]
         public int Id { get; set; }
 
 
