@@ -5,17 +5,22 @@
 }
 <link rel="stylesheet" href="~/css/login-logout.css" />
 
+
 <div class="wrapper fadeInDown">
     <div id="formContent">
+        <p></p><p></p>
         <!-- Tabs Titles -->
-        <a class="inactive underlineHover" asp-action="Login"> Sign in </a>
+        <a class="inactive underlineHover" asp-action="Login" style="color:#000000"> Sign in </a>
         <a> </a>
-        <a class="inactive underlineHover" asp-action="Register"> Sign up </a>
-
+        <a> </a>
+        <a> </a>
+        <a class="inactive underlineHover" asp-action="Register" style="color:#000000"> Sign up </a>
+        <p></p><p></p>
         <form asp-action="Register">
-
             <input type="text" asp-for="UserName" class="fadeIn placeholder="Username" />
+            <p></p>
             <input type="text" asp-for="Password" class="fadeIn placeholder="Password" />
+            <p></p>
             <input type="submit" value="Sign up" class="btn btn-primary" />
 
         </form>

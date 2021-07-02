@@ -49,10 +49,14 @@
 
 <div class="wrapper fadeInDown">
     <div id="formContent">
+        <p></p><p></p>
         <!-- Tabs Titles -->
-        <a class="inactive underlineHover" asp-action="Login"> Sign in </a>
-        <a> </a>        
-        <a class="inactive underlineHover" asp-action="Register"> Sign up </a>
+        <a class="inactive underlineHover" asp-action="Login" style="color:#000000"> Sign in </a>
+        <a> </a>
+        <a> </a>
+        <a> </a>
+        <a class="inactive underlineHover" asp-action="Register" style="color:#000000"> Sign up </a>
+        <p></p><p></p>
         <!-- Icon -->
         @* <div class="fadeIn first">
             <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
@@ -67,7 +71,9 @@
         <form asp-action="Login">
 
             <input type="text" asp-for="UserName" class="fadeIn placeholder="Username" />
+            <p></p>
             <input type="text" asp-for="Password" class="fadeIn placeholder="Password" />
+            <p></p>
             <input type="submit" value="Login" class="btn btn-primary" />
 
         </form>
