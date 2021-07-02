@@ -9,7 +9,7 @@ using OurNewProject.Data;
 namespace OurNewProject.Migrations
 {
     [DbContext(typeof(OurNewProjectContext))]
-    [Migration("20210702100326_init")]
+    [Migration("20210702121923_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,30 +33,6 @@ namespace OurNewProject.Migrations
                     b.HasIndex("MyProductListId");
 
                     b.ToTable("OrderProduct");
-                });
-
-            modelBuilder.Entity("OurNewProject.Models.Branch", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Address")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("BranchName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("OcHours")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Branch");
                 });
 
             modelBuilder.Entity("OurNewProject.Models.Category", b =>
@@ -111,9 +87,6 @@ namespace OurNewProject.Migrations
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("InStock")
-                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");

@@ -21,11 +21,9 @@ namespace OurNewProject.Controllers
 
         // GET: Products
         public async Task<IActionResult> Index()
-        
         {
-           var ourNewProjectContext = _context.Product.Include(p => p.Category);
-           return View(await ourNewProjectContext.ToListAsync());
-         
+            var ourNewProjectContext = _context.Product.Include(p => p.Category);
+            return View(await ourNewProjectContext.ToListAsync());
         }
 
         // GET: Products/Details/5
@@ -59,7 +57,7 @@ namespace OurNewProject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Price,Description,CategoryId,InStock")] Product product)
+        public async Task<IActionResult> Create([Bind("Id,Name,Price,Description,CategoryId")] Product product)
         {
             if (ModelState.IsValid)
             {
@@ -93,7 +91,7 @@ namespace OurNewProject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Price,Description,CategoryId,InStock")] Product product)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Price,Description,CategoryId")] Product product)
         {
             if (id != product.Id)
             {

@@ -18,4 +18,5 @@ namespace OurNewProject.Models
         public List<Product> MyProductList { get; set; }
         public double TotalPrice { get; set; }
     }
+
 }
