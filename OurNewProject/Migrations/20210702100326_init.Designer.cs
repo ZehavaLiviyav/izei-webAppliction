@@ -9,8 +9,8 @@ using OurNewProject.Data;
 namespace OurNewProject.Migrations
 {
     [DbContext(typeof(OurNewProjectContext))]
-    [Migration("20210702074757_1m1")]
-    partial class _1m1
+    [Migration("20210702100326_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -111,6 +111,9 @@ namespace OurNewProject.Migrations
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("InStock")
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");

@@ -20,6 +20,7 @@ namespace OurNewProject.Models
         public Category Category { get; set; }
         public ProductImage productImage { get; set; }
         public List<Order> MyOrderList { get; set; }
+        public int InStock { get; set; }
 
     }
 }

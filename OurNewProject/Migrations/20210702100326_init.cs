@@ -2,7 +2,7 @@
 
 namespace OurNewProject.Migrations
 {
-    public partial class _1m1 : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
