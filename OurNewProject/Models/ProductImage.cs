@@ -13,7 +13,5 @@ namespace OurNewProject.Models
         public Product product { get; set; }
         public string Imge { get; set; }
 
-
-
     }
 }

@@ -9,6 +9,7 @@ namespace OurNewProject.Models
     public class Product
     {
 
+
         [Key]
         public int Id { get; set; }
         public String Name { get; set; }
