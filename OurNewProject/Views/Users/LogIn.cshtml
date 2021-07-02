@@ -4,13 +4,13 @@
     ViewData["Title"] = "Login";
 }
 
-<h1>Login</h1>
 
 @*<head>
-    <link rel="stylesheet" href="~/css/loginpage.css" />
-</head>*@
+        <link rel="stylesheet" href="~/css/loginpage.css" />
+    </head>*@
+<link rel="stylesheet" href="~/css/login-logout.css" />
 
-
+@*
     <div id="login-box">
         <div class="left">
             <h1>Login</h1>
@@ -43,6 +43,45 @@
         </div>
         <div class="or">OR</div>
     </div>
-    @section Scripts {
-        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    }
+
+*@
+
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+        <a class="inactive underlineHover" asp-action="Login"> Sign in </a>
+        <a> </a>        
+        <a class="inactive underlineHover" asp-action="Register"> Sign up </a>
+        <!-- Icon -->
+        @* <div class="fadeIn first">
+            <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
+        </div>*@
+
+        <!-- Login Form -->
+        @* <form>
+            <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+            <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+            <input type="submit" class="fadeIn fourth" value="Log In">
+        </form>*@
+        <form asp-action="Login">
+
+            <input type="text" asp-for="UserName" class="fadeIn placeholder="Username" />
+            <input type="text" asp-for="Password" class="fadeIn placeholder="Password" />
+            <input type="submit" value="Login" class="btn btn-primary" />
+
+        </form>
+        @if (ViewBag.Error != null)
+        {
+            <div class="text-danger">@ViewBag.Error </div>
+        }
+
+
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+@*<script src="~/js/login-logout.js"></script>
+*@

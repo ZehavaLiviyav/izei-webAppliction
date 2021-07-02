@@ -48,6 +48,8 @@ namespace OurNewProject.Controllers
         // GET: Products/Create
         public IActionResult Create()
         {
+            ViewData["Categoriess"] = new SelectList(_context.Category, nameof(Category.Id), nameof(Category.Name));
+
             ViewData["CategoryId"] = new SelectList(_context.Category, "Id", "Id");
             return View();
         }

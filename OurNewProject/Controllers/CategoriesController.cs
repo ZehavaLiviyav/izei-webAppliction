@@ -8,8 +8,10 @@ using Microsoft.EntityFrameworkCore;
 using OurNewProject.Data;
 using OurNewProject.Models;
 
+
 namespace OurNewProject.Controllers
-{
+{  
+
     public class CategoriesController : Controller
     {
         private readonly OurNewProjectContext _context;
