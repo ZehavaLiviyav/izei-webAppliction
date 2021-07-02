@@ -15,7 +15,7 @@ namespace OurNewProject.Models
 
         public String PhoneNumber { get; set; }
 
-        public String OcHours{ get; set; }
+        public String OcHours { get; set; }
 
 
     }

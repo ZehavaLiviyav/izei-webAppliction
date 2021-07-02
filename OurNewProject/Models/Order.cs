@@ -11,9 +11,11 @@ namespace OurNewProject.Models
         [Key]
         public int OrderID { get; set; }
         [Required]
-        public string UserID { get; set; }
+        public int UserID { get; set; }
         [Required]
-        public string TimeStamp { get; set; }
-
+        public string TimeOrder { get; set; }
+        public String Address { get; set; }
+        public List<Product> MyProductList { get; set; }
+        public double TotalPrice { get; set; }
     }
 }
