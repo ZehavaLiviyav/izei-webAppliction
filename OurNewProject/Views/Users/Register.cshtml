@@ -17,9 +17,9 @@
         <a class="inactive underlineHover" asp-action="Register" style="color:#000000"> Sign up </a>
         <p></p><p></p>
         <form asp-action="Register">
-            <input type="text" asp-for="UserName" class="fadeIn placeholder="Username" />
+            <input type="text"  id="UserName" asp-for="UserName" class="fadeIn" placeholder="Username" />
             <p></p>
-            <input type="text" asp-for="Password" class="fadeIn placeholder="Password" />
+            <input type="text" id="password" asp-for="Password" class="fadeIn" placeholder="Password" />
             <p></p>
             <input type="submit" value="Sign up" class="btn btn-primary" />
 
