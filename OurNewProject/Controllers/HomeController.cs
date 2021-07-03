@@ -37,7 +37,10 @@ namespace OurNewProject.Controllers
         public IActionResult Mevasseret() { return View(); }
         public IActionResult Hyadata() { return View(); }
 
-      //  [Authorize]
+     
+        
+
+        //  [Authorize]
         public IActionResult Privacy()
         {
             return View();
@@ -48,5 +51,6 @@ namespace OurNewProject.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+ 
     }
 }

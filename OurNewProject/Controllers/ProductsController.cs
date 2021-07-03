@@ -48,6 +48,7 @@ namespace OurNewProject.Controllers
         // GET: Products/Create
         public IActionResult Create()
         {
+            ViewData["Products"] = new List<Product>(_context.Product);
             ViewData["Categoriess"] = new SelectList(_context.Category, nameof(Category.Id), nameof(Category.Name));
 
             ViewData["CategoryId"] = new SelectList(_context.Category, "Id", "Id");
@@ -158,5 +159,14 @@ namespace OurNewProject.Controllers
         {
             return _context.Product.Any(e => e.Id == id);
         }
+        public async Task<IActionResult> Menu()
+        {
+            var ProjectContext = _context.Product.Include(c => c.Category);
+            return View(await ProjectContext.ToListAsync());
+        }
+        /*public IActionResult Menu()
+        {
+            return View();
+        }*/
     }
 }
