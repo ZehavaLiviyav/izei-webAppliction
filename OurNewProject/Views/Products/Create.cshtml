@@ -27,11 +27,7 @@
                 <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="productImage.Imge" class="control-label"></label>
-                <input asp-for="productImage.Imge" class="form-control" />
-                <span asp-validation-for="productImage.Imge" class="text-danger"></span>
-            </div>
+        
             <div class="form-group">
                 <label asp-for="CategoryId" class="control-label"></label>
                 <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.Categoriess"></select>

@@ -9,41 +9,6 @@
     <link rel="stylesheet" href="~/css/Menu.css">
 
 </head>
-@*<br />
-    <div class="centersearch">
-        <h2 class="ourTitle">Our</h2>
-        <h1 class="menuTitle">MENU</h1>
-
-        <form asp-action="Search">
-            <input name="queryN" placeholder="Search" class="searchbar" />
-            <input type="submit" value="Search" class="searchButton" />
-        </form>
-    </div>*@
-
-
-
-
-@*<tbody>
-    @foreach (var item in Model)
-    {
-        <div class="tab-pane fade show active" id="breakfast" role="tabpanel" aria-labelledby="breakfast-tab">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="single_menu">
-
-                        <img src="https://i.imgur.com/kbpceNv.jpg" alt="burger">
-                        <div class="menu_content">
-                            <h4>    @Html.DisplayFor(modelItem => item.Name)  <span> @Html.DisplayFor(modelItem => item.Price)</span></h4>
-                            <p> @Html.DisplayFor(modelItem => item.Description)</p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    }
-</tbody>*@
 
 
 
@@ -76,43 +41,22 @@
         @foreach (var item in Model)
         {
             
-    <div class="tab-pane fade show active" role="tabpanel">
-        <div class="row">
-            <div class="col-md-8">
-                <div class="single_menu">
-                    <img src="https://did.li/PFMw5">
-                    <div class="menu_content">
-                        <h4>    @Html.DisplayFor(modelItem => item.Name)  <span> @Html.DisplayFor(modelItem => item.Price)</span></h4>
-                        <p> @Html.DisplayFor(modelItem => item.Description)</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <button>add to cart</button>
-    </div>
-
-                
-            
-         @* if (item.Category.Name.Equals("תוספות"))
-            {
-                <div class="tab-pane fade" id="dinner" role="tabpanel" aria-labelledby="dinner-tab">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="single_menu">
-                                <img src="https://i.imgur.com/kbpceNv.jpg" alt="burger">
-                                <div class="menu_content">
-                                    <h4>    @Html.DisplayFor(modelItem => item.Name)  <span> @Html.DisplayFor(modelItem => item.Price)</span></h4>
-                                    <p> @Html.DisplayFor(modelItem => item.Description)</p>
-                                </div>
-
+            <div class="tab-pane fade show active" role="tabpanel">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="single_menu">
+                            <img src="@Url.Content(item.productImage.Imge)"></img>
+                          @*  <img src="https://did.li/PFMw5">*@
+                            <div class="menu_content">
+                                <h4>    @Html.DisplayFor(modelItem => item.Name)  <span>  ₪ </span> <span> @Html.DisplayFor(modelItem => item.Price)</span>  </h4>
+                                <p> @Html.DisplayFor(modelItem => item.Description)</p>
                             </div>
                         </div>
                     </div>
+
                 </div>
-
-            }*@
-
+                <button>add to cart</button>
+            </div>
 
         }
 
