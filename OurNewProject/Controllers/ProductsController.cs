@@ -164,9 +164,11 @@ namespace OurNewProject.Controllers
             var ProjectContext = _context.Product.Include(c => c.Category);
             return View(await ProjectContext.ToListAsync());
         }
-        /*public IActionResult Menu()
+        public async Task<IActionResult> Buttom(string ctN)
         {
-            return View();
-        }*/
+            var ProjectContext = _context.Product.Include(c => c.Category).Where(p => p.Category.Name.Equals(ctN) ||
+                                    (ctN == null));
+            return View("Menu", await ProjectContext.ToListAsync());
+        }
     }
 }

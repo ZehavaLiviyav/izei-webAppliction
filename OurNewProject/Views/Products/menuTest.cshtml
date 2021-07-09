@@ -1,0 +1,60 @@
+﻿@model IEnumerable<OurNewProject.Models.Product>
+
+@{
+    ViewData["Title"] = "Menu";
+}
+
+
+<head>
+    <link rel="stylesheet" href="~/css/Menu.css">
+
+</head>
+
+
+
+
+@*<section id="our_menu" class="pt-5 pb-5">*@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="page_title text-center mb-4">
+                <h1>our menu</h1>
+                <div class="single_line"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-btns">
+        <form asp-action="Buttom"> <button value="" class="button" id="allCat">הכל</button></form>
+        <form asp-action="Buttom"> <button value="גלידות" type="submit" class="button" name="ctN">גלידות</button></form>
+        <form asp-action="Buttom"> <button value="יוגורטים" type="submit" class="button" name="ctN">יוגורטים</button></form>
+
+    </div>
+    @foreach (var item in Model)
+    {
+
+            <div class="tab-pane fade show active" id="breakfast" role="tabpanel" aria-labelledby="breakfast-tab">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="single_menu">
+                            @*    <img src="@Url.Content(item.productImage.Imge)"></img>*@
+                            <img src="https://did.li/PFMw5">
+                            <div class="menu_content">
+                                <h4 class="text-center">    @Html.DisplayFor(modelItem => item.Name)  <span>  ₪ </span> <span> @Html.DisplayFor(modelItem => item.Price)</span>  </h4>
+                                <p class="text-center"> @Html.DisplayFor(modelItem => item.Description)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <button>add to cart</button>
+            </div>
+    }
+
+
+
+</div>
+@*</section>*@
+
+
+
