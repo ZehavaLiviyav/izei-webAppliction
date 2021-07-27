@@ -29,14 +29,18 @@
 </div>
 
 <div class="row">
+
     @foreach (var item in Model)
     {
-        <div class="card">
-            <img src="https://did.li/PFMw5" alt="Denim Jeans" style="width:100%">
-            <h1 style="        color: #dc3545">  @Html.DisplayFor(modelItem => item.Name)  </h1>
-            <p class="price">   @Html.DisplayFor(modelItem => item.Price)  ₪  </p>
-            <p>@Html.DisplayFor(modelItem => item.Description)</p>
-            <p><button>הוסף לסל שלי</button></p>
-        </div>
+    <div class="card">
+        
+        <img src=" @Html.DisplayFor(modelItem => item.productImage.Imge) " alt="Denim Jeans" style="width:100%">
+        <h1 style="        color: #dc3545">  @Html.DisplayFor(modelItem => item.Name)  </h1>
+        <p class="price">   @Html.DisplayFor(modelItem => item.Price)  ₪  </p>
+        <p>@Html.DisplayFor(modelItem => item.Description)</p>
+
+
+        <p><button>הוסף לסל שלי</button></p>
+    </div>
     }
 </div>

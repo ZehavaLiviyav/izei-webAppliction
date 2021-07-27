@@ -22,6 +22,7 @@ namespace OurNewProject.Controllers
         // GET: Products
         public async Task<IActionResult> Index()
         {
+            var imagesa = _context.Product.Include(p => p.productImage);
             var ourNewProjectContext = _context.Product.Include(p => p.Category);
             return View(await ourNewProjectContext.ToListAsync());
         }
@@ -170,5 +171,23 @@ namespace OurNewProject.Controllers
                                     (ctN == null));
             return View("Menu", await ProjectContext.ToListAsync());
         }
+
+        public async Task<IActionResult> Join()
+        {
+            var query =
+                from product in _context.Product
+                join image in _context.ProductImage on product.Id equals image.productId
+                select new ProductJoin(product, image);
+            return View("Join", await query.ToListAsync());
+        }
+
+    }
+
+    public class ProductJoin
+    {
+        public Product p { get; set; }
+        public ProductImage pi { get; set; }
+
+        public ProductJoin(Product p, ProductImage pi) { this.p = p; this.pi = pi; }
     }
 }

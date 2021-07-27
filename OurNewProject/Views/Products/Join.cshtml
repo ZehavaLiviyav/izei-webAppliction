@@ -1,0 +1,42 @@
+﻿
+@using  OurNewProject.Controllers
+@model IEnumerable<ProductJoin>
+
+@{
+    ViewData["Title"] = "Join";
+}
+
+
+<h1>Index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.p.productImage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.pi.Imge)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model as ICollection<ProductJoin>)
+        {
+            <tr>
+                <th>
+                    @item.p.productImage
+                </th>
+              
+                <td>
+                   <img src="@item.pi.Imge" />
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    <p align="center">
+        <a class="btn btn-primary" asp-action="Index">Users</a>
+    </p>
+</div>
