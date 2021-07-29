@@ -12,9 +12,79 @@
 
 </head>
 
+
+
 <body>
+    
+    <style>
+    .navbar {
+        max-width: none;
+        background: #090e46;
+        height: 123px;
+        overflow: visible;
+        margin-top: 0;
+        -webkit-transition: all .3s ease-out;
+        -moz-transition: all .3s ease-out;
+        -o-transition: all .3s ease-out;
+        transition: all .3s ease-out;
+    }
+        .menu li a {
+            color: #d6d6a2;
+            padding: 6px 10px;
+            border-left: 1px solid transparent;
+            border-right: 1px solid transparent;
+            display: inline-block;
+            -webkit-transition: all .3s ease-out;
+            -moz-transition: all .3s ease-out;
+            -o-transition: all .3s ease-out;
+            transition: all .3s ease-out;
+        }
+
+        .menu li {
+            margin: 0 25px;
+            float: right;
+            /* font-family: alef; */
+            font-size: 15px;
+            line-height: 15px;
+        }
+
+        .main-navigation {
+            max-width: none;
+            margin: 0 auto;
+            width: 1200px;
+            height: 100%;
+        }
+
+</style>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-danger border-bottom box-shadow mb-3">
+
+
+        <div id="navbar" class="navbar">
+            <nav id="site-navigation" class="navigation main-navigation" role="navigation">
+                <div class="menu-right-side-menu-container">
+                    <ul id="menu-right-side-menu" class="menu">
+                        <li id="menu-item-126" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-108 current_page_item menu-item-126"><a href="https://www.goldaglida.co.il/" aria-current="page">ראשי</a></li>
+                        <li id="menu-item-2089" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2089"><a title="flavours" href="#">הטעמים שלנו</a></li>
+                        <li id="menu-item-2091" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2091"><a href="https://www.goldaglida.co.il/%d7%97%d7%95%d7%9e%d7%a8%d7%99-%d7%92%d7%9c%d7%9d/">חומרי גלם</a></li>
+                    </ul>
+                </div> <a href="#" class="menu_mobile"><i class="icon-menu"></i> </a>
+                <a href="/"><div class="logo_box"><img class="logo" alt="גולדה - Flavoure Boutique - לוגו - קישור לדף הבית" src="https://www.goldaglida.co.il/wp-content/themes/twentythirteen-child/images/golda_logo.png" /></div></a>
+                <div class="menu-left-side-menu-container">
+                    <ul id="menu-left-side-menu" class="menu">
+                        <li id="menu-item-129" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-129"><a href="https://www.goldaglida.co.il/%d7%90%d7%99%d7%a8%d7%95%d7%a2%d7%99%d7%9d/">אירועים</a></li>
+                        <li id="menu-item-2094" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2094"><a href="https://www.goldaglida.co.il/%d7%a1%d7%a0%d7%99%d7%a4%d7%99%d7%9d/">סניפים</a></li>
+                        <li id="menu-item-2093" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2093"><a href="https://www.goldaglida.co.il/%d7%a6%d7%95%d7%a8-%d7%a7%d7%a9%d7%a8/">צור קשר</a></li>
+                        <li id="menu-item-2568" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2568"><a target="_blank" rel="noopener" href="https://bit.ly/2KQ7gA7">Gift Card</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+
+
+
+
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light  border-bottom box-shadow mb-3" style="background-color:#5c90c9d1">
             <div class="container">
 
                 <a OurNewProject</a>
@@ -24,11 +94,6 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Index">Edit users</a>
-                        </li>
-
 
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">דף הבית</a>
@@ -79,13 +144,13 @@
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="LogIn">התחבר</a>
                             </li>
                         }
-
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">
-                                <img src="https://i.imagesup.co/images2/4e554b6f1ad288006cd0715529e7006c602ac071.png" width="30" height="30" class="img-fluid">
-                            </a>
-                        </li>
-
+                        @*
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">
+                                    <img src="https://i.imagesup.co/images2/4e554b6f1ad288006cd0715529e7006c602ac071.png" width="30" height="30" class="img-fluid">
+                                </a>
+                            </li>
+                        *@
 
                     </ul>
                 </div>
@@ -98,7 +163,7 @@
         </main>
     </div>
 
-   
+
     <footer>
         <div class="text">
             <h2>zehavaitay</h2>

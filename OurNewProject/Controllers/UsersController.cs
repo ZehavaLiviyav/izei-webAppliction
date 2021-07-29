@@ -436,16 +436,7 @@ namespace OurNewProject.Controllers
         }
 
 
-        public class Stat
-        {
-            public string Key;
-            public int Values;
-            public Stat(string key, int values)
-            {
-                Key = key;
-                Values = values;
-            }
-        }
+    
 
 
         [HttpGet]
@@ -500,15 +491,18 @@ namespace OurNewProject.Controllers
             return View();
         }
 
-         public class FavoriteDish
+
+    }
+    public class Stat
     {
-        public User u { get; set; }
-        public Product pro { get; set; }
-
-        public FavoriteDish(User u, Product ui) { this.u = u; this.pro = ui; }
+        public string Key;
+        public int Values;
+        public Stat(string key, int values)
+        {
+            Key = key;
+            Values = values;
+        }
     }
 
-    }
-    
-  
+
 }

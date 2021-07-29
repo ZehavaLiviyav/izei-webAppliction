@@ -22,8 +22,7 @@ namespace OurNewProject.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
-        {
+        public IActionResult Index(){
             return View();
         }
 
@@ -33,12 +32,10 @@ namespace OurNewProject.Controllers
         public IActionResult Jerusalem() { return View(); }
         public IActionResult RG() { return View(); }
         public IActionResult Shoam() { return View(); }
-        public IActionResult TA() { return View(); }
+        public IActionResult Team() { return View(); }
         public IActionResult Mevasseret() { return View(); }
         public IActionResult Hyadata() { return View(); }
 
-     
-        
 
         //  [Authorize]
         public IActionResult Privacy()

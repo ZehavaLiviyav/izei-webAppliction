@@ -22,7 +22,7 @@
     <None Include="Views\Home\RG.cshtml" />
     <None Include="Views\Home\Rishon.cshtml" />
     <None Include="Views\Home\Shoam.cshtml" />
-    <None Include="Views\Home\TA.cshtml" />
+    <None Include="Views\Home\Team.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
