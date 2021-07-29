@@ -6,7 +6,6 @@
     ViewData["Title"] = "Join";
 }
 
-
 <h1>Index</h1>
 
 <table class="table">
@@ -18,6 +17,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.pi.Imge)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.p.Name)
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -25,18 +27,36 @@
         {
             <tr>
                 <th>
-                    @item.p.productImage
+                    @item.p.Name
                 </th>
-              
+                <th>
+                    @item.p.productImage.productId
+                </th>
+
                 <td>
-                   <img src="@item.pi.Imge" />
+                    <img src="@item.pi.Imge" />
                 </td>
             </tr>
         }
     </tbody>
 </table>
 <div>
+    @foreach (var item in Model as ICollection<ProductJoin>)
+    {
+        <div class="card">
+
+            <img src=" @Html.DisplayFor(modelItem => item.pi.Imge) " alt="Denim Jeans" style="width:100%">
+            <h1 style="        color: #dc3545">  @Html.DisplayFor(modelItem => @item.p.Name)  </h1>
+            <p class="price">   @Html.DisplayFor(modelItem => item.p.Price)  ₪  </p>
+            <p>@Html.DisplayFor(modelItem => item.p.Description)</p>
+
+
+            <p><button>הוסף לסל שלי</button></p>
+        </div>
+    }
     <p align="center">
         <a class="btn btn-primary" asp-action="Index">Users</a>
     </p>
 </div>
+
+

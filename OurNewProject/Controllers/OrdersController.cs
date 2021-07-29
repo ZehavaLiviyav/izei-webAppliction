@@ -22,7 +22,21 @@ namespace OurNewProject.Controllers
         // GET: Orders
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Order.ToListAsync());
+            try
+            {
+                List<Order> applicationDbContext = _context.Order.Include(c => c.UserID).Include(p => p.MyProductList).ToList();
+
+                foreach (Order or in applicationDbContext)
+                {
+                    or.UserID = _context.User.FirstOrDefault(u => u.Id == or.UserID).Id;
+                }
+                return View(applicationDbContext);
+            }
+            catch { return RedirectToAction("PageNotFound", "Home"); }
+
+
+
+            /*return View(await _context.Order.ToListAsync());*/
         }
 
         // GET: Orders/Details/5
@@ -30,15 +44,17 @@ namespace OurNewProject.Controllers
         {
             if (id == null)
             {
-                return NotFound();
+                return RedirectToAction("PageNotFound", "Home");
             }
 
             var order = await _context.Order
+                  .Include(p => p.MyProductList)
                 .FirstOrDefaultAsync(m => m.OrderID == id);
             if (order == null)
             {
-                return NotFound();
+                return RedirectToAction("PageNotFound", "Home");
             }
+            order.UserID = _context.User.FirstOrDefault(u => u.Id == order.UserID).Id;
 
             return View(order);
         }
@@ -46,6 +62,7 @@ namespace OurNewProject.Controllers
         // GET: Orders/Create
         public IActionResult Create()
         {
+            ViewData["Productss"] = new SelectList(_context.Product, nameof(Product.Id), nameof(Product.Name));
             return View();
         }
 
@@ -148,6 +165,57 @@ namespace OurNewProject.Controllers
         private bool OrderExists(int id)
         {
             return _context.Order.Any(e => e.OrderID == id);
+        }
+
+        public IActionResult MyOrder()
+        {
+            try
+            {
+                String userName = HttpContext.User.Identity.Name;
+                User user = _context.User.FirstOrDefault(x => x.UserName.Equals(userName));
+                Order order = _context.Order.FirstOrDefault(x => x.UserID == user.Id);
+                order.MyProductList = _context.Product.Where(x => x.MyOrderList.Contains(order)).ToList();
+
+                if (order == null)
+                {
+                    return RedirectToAction("PageNotFound", "Home");
+                }
+
+                return View(order);
+            }
+            catch { return RedirectToAction("PageNotFound", "Home"); }
+        }
+
+
+        public async Task<IActionResult> AddToOrder(int id) //product id
+        {
+            try
+            {
+                Product product = _context.Product.Include(db => db.MyOrderList).FirstOrDefault(x => x.Id == id);
+                String userName = HttpContext.User.Identity.Name;
+                User user = _context.User.FirstOrDefault(x => x.UserName.Equals(userName));
+                Order order = _context.Order.Include(db => db.MyProductList)
+                 .FirstOrDefault(x => x.UserID == user.Id);
+
+
+                if (order.UserID == null)
+                    order.MyProductList = new List<Product>();
+                if (product.MyOrderList == null)
+                    product.MyOrderList = new List<Order>();
+
+                if (!(order.MyProductList.Contains(product) && product.MyOrderList.Contains(order)))
+                {
+
+                    order.MyProductList.Add(product);
+                    product.MyOrderList.Add(order);
+                    order.TotalPrice += product.Price;
+                    _context.Update(order);
+                    _context.Update(product);
+                    await _context.SaveChangesAsync();
+                }
+                return RedirectToAction(nameof(MyOrder));
+            }
+            catch { return RedirectToAction("PageNotFound", "Home"); }
         }
     }
 }

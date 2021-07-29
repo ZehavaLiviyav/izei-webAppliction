@@ -18,6 +18,8 @@ namespace OurNewProject.Data
         public DbSet<OurNewProject.Models.Order> Order { get; set; }
         public DbSet<OurNewProject.Models.Product> Product { get; set; }
         public DbSet<OurNewProject.Models.ProductImage> ProductImage { get; set; }
+        public DbSet<OurNewProject.Models.Supplier> Supplier { get; set; }
+        public DbSet<OurNewProject.Models.Branch> Branch { get; set; }
 
     }
 }

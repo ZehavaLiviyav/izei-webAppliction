@@ -1,5 +1,5 @@
-﻿@model IEnumerable<OurNewProject.Models.Product>
-
+﻿@using  OurNewProject.Controllers
+@model IEnumerable<ProductJoin>
 @{
     ViewData["Title"] = "Menu";
 }
@@ -30,17 +30,22 @@
 
 <div class="row">
 
-    @foreach (var item in Model)
+  
+    @foreach (var item in Model as ICollection<ProductJoin>)
     {
-    <div class="card">
-        
-        <img src=" @Html.DisplayFor(modelItem => item.productImage.Imge) " alt="Denim Jeans" style="width:100%">
-        <h1 style="        color: #dc3545">  @Html.DisplayFor(modelItem => item.Name)  </h1>
-        <p class="price">   @Html.DisplayFor(modelItem => item.Price)  ₪  </p>
-        <p>@Html.DisplayFor(modelItem => item.Description)</p>
+        <div class="card">
+
+            <img src=" @Html.DisplayFor(modelItem => item.pi.Imge) " alt="Denim Jeans" style="width:100%">
+            <h1 style="        color: #dc3545">  @Html.DisplayFor(modelItem => @item.p.Name)  </h1>
+            <p class="price">   @Html.DisplayFor(modelItem => item.p.Price)  ₪  </p>
+            <p>@Html.DisplayFor(modelItem => item.p.Description)</p>
 
 
-        <p><button>הוסף לסל שלי</button></p>
-    </div>
+            <form asp-controller="Orders" asp-action="AddToOrder" asp-route-id="@item.p.Id" method="post">
+                <button type="submit" class="btn btn-danger btn-sm card-background">
+                    Add To Cart
+                </button>
+            </form>
+        </div>
     }
 </div>

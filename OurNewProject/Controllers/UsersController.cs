@@ -155,6 +155,7 @@ namespace OurNewProject.Controllers
 
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -165,6 +166,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using OurNewProject.Data;
 using OurNewProject.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace OurNewProject.Controllers
 {
@@ -433,5 +435,80 @@ namespace OurNewProject.Controllers
             return _context.User.Any(e => e.Id == id);
         }
 
+
+        public class Stat
+        {
+            public string Key;
+            public int Values;
+            public Stat(string key, int values)
+            {
+                Key = key;
+                Values = values;
+            }
+        }
+
+
+        [HttpGet]
+        public ActionResult Statistics()
+        {
+            //statistic 1- how many orders every customer had made, there is only one shopping cart
+            ICollection<Stat> statistic1 = new Collection<Stat>();
+            var result1 = from c in _context.User.Include(o => o.Type).GroupBy(u => u.Type)
+                          select c.Count();
+            int countUser = 0, countAdmin = 0;
+            foreach (var u in (from c in _context.User select c))
+            {
+                if (u.Type == UserType.Client)
+                    countUser++;
+                else
+                    countAdmin++;
+            }
+            statistic1.Add(new Stat("Client", countUser));
+            statistic1.Add(new Stat("Admin", countAdmin));
+
+            ViewBag.data = statistic1;
+            ICollection<Stat> statistic2 = new Collection<Stat>();
+            List<Product> products = _context.Product.ToList();
+            List<Category> categories = _context.Category.ToList();
+            var res2 = from prod in products
+                       join cat in categories on prod.CategoryId equals cat.Id
+                       group cat by cat.Id into Gr
+                       select new { id = Gr.Key, num = Gr.Count() };
+
+            var stat = from g in res2
+                       join cat in categories on g.id equals cat.Id
+                       select new { category = cat.Name, count = g.num };
+            foreach (var v in stat)
+            {
+                if (v.count > 0)
+                    statistic2.Add(new Stat(v.category, v.count));
+            }
+
+            ViewBag.data2 = statistic2;
+
+            return View();
+        }
+
+        internal class ObjectResult
+        {
+            public string Type { get; set; }
+            public int count { get; set; }
+            public ObjectResult(string t, int c) { Type = t; count = c; }
+        }
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
+
+         public class FavoriteDish
+    {
+        public User u { get; set; }
+        public Product pro { get; set; }
+
+        public FavoriteDish(User u, Product ui) { this.u = u; this.pro = ui; }
     }
+
+    }
+    
+  
 }

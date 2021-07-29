@@ -6,13 +6,17 @@ using System.Threading.Tasks;
 
 namespace OurNewProject.Models
 {
-    public class Category
+    public class Supplier
     {
         [Key]
         public int Id { get; set; }
-        [Display(Name = "שם קטגוריה")]
+        [Display(Name = "שם")]
         public string Name { get; set; }
-        [Display(Name = "מוצרים")]
-        public List<Product> myProducts { get; set; }
+        [Display(Name = "מספר טלפון")]
+        public String Phone { get; set; }
+        [Display(Name = "סניפים")]
+        public List<Branch> myBranches { get; set; }
     }
+
+
 }

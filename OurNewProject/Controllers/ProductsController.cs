@@ -160,7 +160,7 @@ namespace OurNewProject.Controllers
         {
             return _context.Product.Any(e => e.Id == id);
         }
-        public async Task<IActionResult> Menu()
+        /*public async Task<IActionResult> Menu()
         {
             var ProjectContext = _context.Product.Include(c => c.Category);
             return View(await ProjectContext.ToListAsync());
@@ -170,15 +170,22 @@ namespace OurNewProject.Controllers
             var ProjectContext = _context.Product.Include(c => c.Category).Where(p => p.Category.Name.Equals(ctN) ||
                                     (ctN == null));
             return View("Menu", await ProjectContext.ToListAsync());
+        }*/
+
+        public async Task<IActionResult> menuTest()
+        {
+            return View();
         }
 
-        public async Task<IActionResult> Join()
+        public async Task<IActionResult> Menu()
         {
+            var ProjectContext = _context.Product.Include(c => c.Category);
+
             var query =
                 from product in _context.Product
                 join image in _context.ProductImage on product.Id equals image.productId
                 select new ProductJoin(product, image);
-            return View("Join", await query.ToListAsync());
+            return View("Menu", await query.ToListAsync());
         }
 
     }

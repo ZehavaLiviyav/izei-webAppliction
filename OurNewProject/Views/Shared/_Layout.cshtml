@@ -6,19 +6,13 @@
     <title>@ViewData["Title"] - OurNewProject</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
- 
+
+
 
 
 </head>
 
 <body>
-    @*
-        <style>
-            body {
-                background-color: #ffc5d9 /*color of the background*/
-            }
-        </style>*@
-
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-danger border-bottom box-shadow mb-3">
             <div class="container">
@@ -37,7 +31,7 @@
 
 
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">דף הבית</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Hyadata">הידעת?</a>
@@ -58,22 +52,35 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">סניפים</a>
                         </li>
 
+                        @if (Context.User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Index">מוצרים</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Index">מוצרים</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Statistics">סטטיסטיקה</a>
+                            </li>
+
+                        }
+
                         @if (Context.User != null && Context.User.Claims != null && Context.User.Claims.Count() > 0)
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Logout">Logout</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="Logout">התנתק</a>
                             </li>
 
                         }
                         else
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="LogIn">Login</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Users" asp-action="LogIn">התחבר</a>
                             </li>
                         }
 
                         <li class="nav-item">
-                            @*<img src="https://did.li/dtGNf" width="35" height="35" class="img-fluid">*@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">
                                 <img src="https://i.imagesup.co/images2/4e554b6f1ad288006cd0715529e7006c602ac071.png" width="30" height="30" class="img-fluid">
                             </a>
@@ -91,19 +98,23 @@
         </main>
     </div>
 
-    <footer class="text-dark">
-        <div>
-            conect
-        </div>
-        @*<div class="container">
-                &copy; 2021 - OurNewProject - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-            </div>*@
-    </footer>
    
+    <footer>
+        <div class="text">
+            <h2>zehavaitay</h2>
+            <!--Facebook Share Button-->
+            <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fi.ibb.co%2FJpYmGjd%2FWANO-logo.png&layout=button&size=small&width=67&height=20&appId" width="67" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+
+        </div>
+
+    </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
+
 

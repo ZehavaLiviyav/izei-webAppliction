@@ -20,12 +20,15 @@ namespace OurNewProject.Models
 
 
         [Required]
+        [Display(Name = "שם")]
         public String UserName { get; set; }
 
         [Required]
+        [Display(Name = "סיסמא")]
         [DataType(DataType.Password)]
         public String Password { get; set; }
 
+         [Display(Name = "טיפוס")]
         public UserType Type { get; set; } = UserType.Client;
 
 
