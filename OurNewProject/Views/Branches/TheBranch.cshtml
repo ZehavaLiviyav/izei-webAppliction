@@ -1,0 +1,56 @@
+﻿@model IEnumerable<OurNewProject.Models.Branch>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<html>
+<body>
+
+    <div class="w3-container">
+        <h2>Tabs</h2>
+        <p>Tabs are perfect for single page web applications, or for web pages capable of displaying different subjects. Click on the links below.</p>
+    </div>
+
+    <div class="w3-bar w3-black">
+
+        @foreach (var item in Model)
+        {
+            <button class="w3-bar-item w3-button" onclick="openCity(@Html.DisplayFor(modelItem => item.Name))">@Html.DisplayFor(modelItem => item.Name)</button>
+        }
+    </div>
+
+
+    @foreach (var item in Model)
+    {
+
+        <div id=@Html.DisplayFor(modelItem => item.Name) class="w3-container city">
+            <h2>@Html.DisplayFor(modelItem => item.Name)</h2>
+            <p>@Html.DisplayFor(modelItem => item.Name)</p>
+        </div>
+
+        
+    }
+    <div id="London" class="w3-container city">
+        <h2>London</h2>
+        <p>London is the capital city of England.</p>
+    </div>
+
+    <script>
+        function openCity(cityName) {
+            var i;
+            var x = document.getElementsByClassName("city");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            document.getElementById(cityName).style.display = "block";
+        }
+    </script>
+
+</body>
+</html>

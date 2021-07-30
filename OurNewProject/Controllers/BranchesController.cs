@@ -158,5 +158,7 @@ namespace OurNewProject.Controllers
         {
             return _context.Branch.Any(e => e.Id == id);
         }
+        public async Task<IActionResult> TheBranch() { return View(await _context.Branch.ToListAsync()); }
+
     }
 }

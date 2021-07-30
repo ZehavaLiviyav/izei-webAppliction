@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewData["Title"] = "About";
+}
+
+<head>
+
+
+    <style>
+
+        .textabout {
+            background-color: white;
+            display: table;
+            margin: auto;
+            border-radius: 2px;
+            opacity: 95%;
+            width: 720px;
+        }
+
+    </style>
+
+
+</head>
+<div class="text-center">
+
+    <u1>
+        <div >
+            <br />
+            <div class="textabout">
+                <img src="~/logo.png" alt="Wano Logo" style="width:538px; height:213px">
+                <br />
+
+                <video width="538" height="300" controls>
+                    <source src="~/Strawberry,Oreo Roll Icecream_Japan street food_Harajuku Japan.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <br />
+
+                Welcome to Wano sushi, where every dish is prepared to perfection. <br />
+                Enjoy Tel Aviv's energetic vibe in our unique ambiance. <br />
+                Whether you are on a date, out with friends or just have a nighttime craving for excellent sushi,<br />
+                Wano is the ultimate place to be. <br />
+                We would be happy to see you among our guests.
+
+
+                <br /><br />
+               @* <b>  For Reservation <a asp-area="" asp-controller="Home" asp-action="Reservation">Click Here</a>.</b>*@
+                <br /><br />
+                Opening Hours:<br />
+                Sunday-Thursday: 12 PM – 12 AM <br />
+                Friday and Saturday: 1 PM – 12 AM<br />
+                <br />
+                Allenby St. at Rothschild Blvd, Tel-Aviv.
+                <br /><br />
+
+
+                <!--Weather Widget-->
+                <a class="weatherwidget-io" href="https://forecast7.com/en/32d0934d78/tel-aviv-yafo/" data-label_1="TEL AVIV" data-label_2="WEATHER" data-theme="salmon">TEL AVIV WEATHER</a>
+                <script>
+                    !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = 'https://weatherwidget.io/js/widget.min.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'weatherwidget-io-js');
+                </script>
+
+
+                <!--Google Maps-->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3384.6900954119606!2d34.77224248575843!3d31.969303132036828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1502b3f69a0c1b27%3A0x9df60473d5201ec3!2z15DXnNeZINeV15nXltecIDEwLCDXqNeQ16nXldefINec16bXmdeV158!5e0!3m2!1siw!2sil!4v1627570605134!5m2!1siw!2sil" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+
+            </div>
+            <br />
+        </div>
+    </u1>
+</div>
+
+
