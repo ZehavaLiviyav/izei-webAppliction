@@ -1,0 +1,10 @@
+﻿
+
+.textabout {
+    background-color: white;
+    display: table;
+    margin: auto;
+    border-radius: 2px;
+    opacity: 95%;
+    width: 720px;
+}

@@ -6,160 +6,15 @@
     <title>@ViewData["Title"] - OurNewProject</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/Layout.css" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
-
 </head>
 
-
-
 <body>
-
-    <style>
-        .navbar {
-            max-width: none;
-            background: #090e46;
-            height: 123px;
-            overflow: visible;
-            margin-top: 0;
-            -webkit-transition: all .3s ease-out;
-            -moz-transition: all .3s ease-out;
-            -o-transition: all .3s ease-out;
-            transition: all .3s ease-out;
-        }
-
-        .menu li a {
-            color: #d6d6a2;
-            padding: 6px 10px;
-            border-left: 1px solid transparent;
-            border-right: 1px solid transparent;
-            display: inline-block;
-            -webkit-transition: all .3s ease-out;
-            -moz-transition: all .3s ease-out;
-            -o-transition: all .3s ease-out;
-            transition: all .3s ease-out;
-        }
-
-        .menu li {
-            margin: 0 25px;
-            float: right;
-            /* font-family: alef; */
-            font-size: 15px;
-            line-height: 15px;
-        }
-
-        .main-navigation {
-            max-width: none;
-            margin: 0 auto;
-            width: 1200px;
-            height: 100%;
-        }
-
-
-
-        body, h1, h2, h3, h4, h5, h6 {
-            font-family: "Lato", sans-serif;
-        }
-
-        body, html {
-            height: 100%;
-            color: #777;
-            line-height: 1.8;
-        }
-
-        /* Create a Parallax Effect */
-        .bgimg-1, .bgimg-2, .bgimg-3 {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        /* First image (Logo. Full height) */
-        .bgimg-1 {
-            background-image: url('/w3images/parallax1.jpg');
-            min-height: 100%;
-        }
-
-        /* Second image (Portfolio) */
-        .bgimg-2 {
-            background-image: url("/w3images/parallax2.jpg");
-            min-height: 400px;
-        }
-
-        /* Third image (Contact) */
-        .bgimg-3 {
-            background-image: url("/w3images/parallax3.jpg");
-            min-height: 400px;
-        }
-
-        .w3-wide {
-            letter-spacing: 10px;
-        }
-
-        .w3-hover-opacity {
-            cursor: pointer;
-        }
-
-        .w3-btn, .w3-button {
-            border: none;
-            display: inline-block;
-            padding: 8px 16px;
-            vertical-align: middle;
-            overflow: hidden;
-            text-decoration: none;
-            color: inherit;
-            background-color: inherit;
-            text-align: center;
-            cursor: pointer;
-            white-space: nowrap;
-        }
-
-        .w3-black, .w3-hover-black:hover {
-            color: #fff !important;
-            background-color: #090e46 !important;
-        }
-        .w3-opacity, .w3-hover-opacity:hover {
-            opacity: 01; 
-        }
-
-        ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-    </style>
     <header>
-
-        @*
-            <div id="navbar" class="navbar">
-                <nav id="site-navigation" class="navigation main-navigation" role="navigation">
-                    <div class="menu-right-side-menu-container">
-                        <ul id="menu-right-side-menu" class="menu">
-                            <li id="menu-item-126" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-108 current_page_item menu-item-126"><a href="https://www.goldaglida.co.il/" aria-current="page">ראשי</a></li>
-                            <li id="menu-item-2089" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2089"><a title="flavours" href="#">הטעמים שלנו</a></li>
-                            <li id="menu-item-2091" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2091"><a href="https://www.goldaglida.co.il/%d7%97%d7%95%d7%9e%d7%a8%d7%99-%d7%92%d7%9c%d7%9d/">חומרי גלם</a></li>
-                        </ul>
-                    </div> <a href="#" class="menu_mobile"><i class="icon-menu"></i> </a>
-                    <a href="/"><div class="logo_box"><img class="logo" alt="גולדה - Flavoure Boutique - לוגו - קישור לדף הבית" src="https://www.goldaglida.co.il/wp-content/themes/twentythirteen-child/images/golda_logo.png" /></div></a>
-                    <div class="menu-left-side-menu-container">
-                        <ul id="menu-left-side-menu" class="menu">
-                            <li id="menu-item-129" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-129"><a href="https://www.goldaglida.co.il/%d7%90%d7%99%d7%a8%d7%95%d7%a2%d7%99%d7%9d/">אירועים</a></li>
-                            <li id="menu-item-2094" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2094"><a href="https://www.goldaglida.co.il/%d7%a1%d7%a0%d7%99%d7%a4%d7%99%d7%9d/">סניפים</a></li>
-                            <li id="menu-item-2093" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2093"><a href="https://www.goldaglida.co.il/%d7%a6%d7%95%d7%a8-%d7%a7%d7%a9%d7%a8/">צור קשר</a></li>
-                            <li id="menu-item-2568" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2568"><a target="_blank" rel="noopener" href="https://bit.ly/2KQ7gA7">Gift Card</a></li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        *@
-
-
-
-
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light  border-bottom box-shadow mb-3" style="background-color:#090e46">
             <div class="container">
 
@@ -217,14 +72,7 @@
                                 <a class="nav-link text-white" asp-area="" asp-controller="Users" asp-action="LogIn">התחבר</a>
                             </li>
                         }
-                        @*
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">
-                                    <img src="https://i.imagesup.co/images2/4e554b6f1ad288006cd0715529e7006c602ac071.png" width="30" height="30" class="img-fluid">
-                                </a>
-                            </li>
-                        *@
-
+                     
                     </ul>
                 </div>
             </div>
@@ -238,11 +86,11 @@
 
 
     <!-- Footer -->
-    <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+    <footer class="w3-center AS w3-padding-64 " style="background-color: #090e46 ">
         <div class="w3-button w3-light-grey" id="to-top" title="back to top"> ↑ </div>
 
         <div class="w3-xlarge w3-section">
-           
+
 
             <a target="_blank" href="https://www.facebook.com/IZEI-Ice-Cream-752659138801831/?ref=pages_you_manage"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
         </div>
@@ -254,54 +102,16 @@
                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Team"> המוח שמאחורי הטעם</a>
             </li>
             <li>&copy; IZEI Ice Cream   ~   אלי ויזל 10, ראשון לציון   ~   Tel: 03-0112234 </li>
-           
+
         </ul>
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/backTop.js"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
-
-
-    <script>
-        // Modal Image Gallery
-        function onClick(element) {
-            document.getElementById("img01").src = element.src;
-            document.getElementById("modal01").style.display = "block";
-            var captionText = document.getElementById("caption");
-            captionText.innerHTML = element.alt;
-        }
-
-        // Change style of navbar on scroll
-        window.onscroll = function () { myFunction() };
-        function myFunction() {
-            var navbar = document.getElementById("myNavbar");
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
-            } else {
-                navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
-            }
-        }
-
-        // Used to toggle the menu on small screens when clicking on the menu button
-        function toggleFunction() {
-            var x = document.getElementById("navDemo");
-            if (x.className.indexOf("w3-show") == -1) {
-                x.className += " w3-show";
-            } else {
-                x.className = x.className.replace(" w3-show", "");
-            }
-        }
-        $(function () {
-
-            $("#to-top").on("click", function () {
-                $("html, body").animate({
-                    scrollTop: 0
-                }, 200);
-            });
-        });
-    </script>
 
 
 </body>

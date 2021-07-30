@@ -8,8 +8,6 @@
 <html>
 <body>
 
-    
-
     <div class="w3-container">
         <h2 class="text-center"> IZEI  גלריית</h2>
     </div>
@@ -46,7 +44,7 @@
               class="w3-display-topright w3-button w3-transparent w3-text-white">&times;</span>
         <div class="w3-display-bottomleft w3-container w3-padding w3-text-black">הגלידות החדשות שלנו עכשיו גם בכוסות</div>
     </div>
-    
+
     <div id="Snow" class="picture w3-display-container" style="display:none">
         <img src="https://www.foodnetwork.com/content/dam/images/food/video/0/03/030/0303/0303503.jpg" alt="Snow" style="width:100%">
         <span onclick="this.parentElement.style.display='none'"
@@ -68,16 +66,7 @@
         <div class="w3-display-bottomleft w3-container w3-padding w3-text-black">המהדורה הורודה</div>
     </div>
 
-    <script>
-        function openImg(imgName) {
-            var i, x;
-            x = document.getElementsByClassName("picture");
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            document.getElementById(imgName).style.display = "block";
-        }
-    </script>
+    <script src="~/js/Gallery.js"></script>
 
 </body>
 </html>
