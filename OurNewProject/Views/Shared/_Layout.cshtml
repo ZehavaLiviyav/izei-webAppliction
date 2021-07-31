@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html dir="rtl">
 <head>
+   
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - OurNewProject</title>
@@ -10,51 +11,61 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bona+Nova:ital@0;1&family=Tinos:ital,wght@0,400;1,400;1,700&display=swap" rel="stylesheet">
 
+
+    
 </head>
 
 <body>
+
+  @*  navbar-light  border-bottom*@
+
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light  border-bottom box-shadow mb-3" style="background-color:#090e46">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm box-shadow mb-3 " style="background-color:#090e46">
             <div class="container">
 
-                <a OurNewProject</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+
+                <button class="navbar-toggler"  style="color: #d6d6a2" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
 
+
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">דף הבית</a>
+                         
+                                <a class="nav-link " style="font-family: 'Bona Nova', serif; color: #d6d6a2" asp-area="" asp-controller="Home" asp-action="Index">דף הבית</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Hyadata">הידעת?</a>
+                            <a class="nav-link" style="font-family: 'Bona Nova', serif; color: #d6d6a2" asp-area="" asp-controller="Home" asp-action="YouKnow">הידעת?</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="About">אודות</a>
+                            <a class="nav-link" style="font-family: 'Bona Nova', serif; color: #d6d6a2" asp-area="" asp-controller="Home" asp-action="About">אודות</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">צור קשר</a>
+                            <a class="nav-link" style="font-family: 'Bona Nova', serif; color: #d6d6a2" asp-area="" asp-controller="Products" asp-action="Menu">התפריט שלנו! </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Gallery">גלריה</a>
+                            <a class="nav-link" style="font-family: 'Bona Nova', serif; color: #d6d6a2" asp-area="" asp-controller="Home" asp-action="Gallery">גלריה</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Privacy">סניפים</a>
+                            <a class="nav-link" style="font-family: 'Bona Nova', serif; color: #d6d6a2" asp-area="" asp-controller="Branches" asp-action="TheBranch">סניפים</a>
                         </li>
 
                         @if (Context.User.IsInRole("Admin"))
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-white" asp-area="" asp-controller="Products" asp-action="Index">מוצרים</a>
+                                <a class="nav-link" style="font-family: 'Bona Nova', serif; color: #d6d6a2" asp-area="" asp-controller="Products" asp-action="Index">מוצרים</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white" asp-area="" asp-controller="Users" asp-action="Index">מוצרים</a>
+                                <a class="nav-link " style="font-family: 'Bona Nova', serif; color: #d6d6a2" asp-area="" asp-controller="Users" asp-action="Index">לקוחות</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white" asp-area="" asp-controller="Users" asp-action="Statistics">סטטיסטיקה</a>
+                                <a class="nav-link" style="font-family: 'Bona Nova', serif; color: #d6d6a2" asp-area="" asp-controller="Users" asp-action="Statistics">סטטיסטיקה</a>
                             </li>
 
                         }
@@ -62,17 +73,17 @@
                         @if (Context.User != null && Context.User.Claims != null && Context.User.Claims.Count() > 0)
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-white" asp-area="" asp-controller="Users" asp-action="Logout">התנתק</a>
+                                <a class="nav-link" style="font-family: 'Bona Nova', serif; color: #d6d6a2" asp-area="" asp-controller="Users" asp-action="Logout">התנתק</a>
                             </li>
 
                         }
                         else
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-white" asp-area="" asp-controller="Users" asp-action="LogIn">התחבר</a>
+                                <a class="nav-link" style="font-family: 'Bona Nova', serif; color: #d6d6a2" asp-area="" asp-controller="Users" asp-action="LogIn">התחבר</a>
                             </li>
                         }
-                     
+
                     </ul>
                 </div>
             </div>
@@ -87,21 +98,21 @@
 
     <!-- Footer -->
     <footer class="w3-center AS w3-padding-64 " style="background-color: #090e46 ">
-        <div class="w3-button w3-light-grey" id="to-top" title="back to top"> ↑ </div>
+        <div class="w3-button" id="to-top" style="color:#d6d6a2" title="back to top"> <b> ↑ </b> </div>
 
         <div class="w3-xlarge w3-section">
 
 
-            <a target="_blank" href="https://www.facebook.com/IZEI-Ice-Cream-752659138801831/?ref=pages_you_manage"><i class="fa fa-facebook-official w3-hover-opacity"></i></a>
+            <a target="_blank" style="color:#d6d6a2" href="https://www.facebook.com/IZEI-Ice-Cream-752659138801831/?ref=pages_you_manage"><i style="color:#d6d6a2" class="fa fa-facebook-official "></i></a>
         </div>
 
 
 
         <ul class="info">
             <li class="nav-item">
-                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Team"> המוח שמאחורי הטעם</a>
+                <a class="nav-link"  style="color:#d6d6a2" asp-area="" asp-controller="Home" asp-action="Team">המוח שמאחורי הטעם </a>
             </li>
-            <li>&copy; IZEI Ice Cream   ~   אלי ויזל 10, ראשון לציון   ~   Tel: 03-0112234 </li>
+            <li style="color:#d6d6a2">&copy; IZEI Ice Cream   ~   אלי ויזל 10, ראשון לציון   ~   Tel: 03-0112234 </li>
 
         </ul>
     </footer>

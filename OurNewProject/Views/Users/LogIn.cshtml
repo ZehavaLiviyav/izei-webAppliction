@@ -4,46 +4,7 @@
     ViewData["Title"] = "Login";
 }
 
-
-@*<head>
-        <link rel="stylesheet" href="~/css/loginpage.css" />
-    </head>*@
 <link rel="stylesheet" href="~/css/log-out.css" />
-@*
-    <div id="login-box">
-        <div class="left">
-            <h1>Login</h1>
-            <form asp-action="Login">
-
-                <input asp-for="UserName" class="form-control" placeholder="Username" />
-                <input asp-for="Password" class="form-control" placeholder="Password" />
-                <input type="submit" value="Login" class="btn btn-primary" />
-
-
-
-                <div>
-                    <br />
-                    Not part of the family ?<br />
-                    <a asp-action="Register">Click here</a> to join.
-                </div>
-
-            </form>
-
-            @if (ViewBag.Error != null)
-            {
-                <div class="text-danger">@ViewBag.Error </div>
-            }
-        </div>
-
-        <div class="right">
-            <br /><br /><br /><br /><br /><br />
-            <button class="social-signin facebook">Log in with facebook</button>
-
-        </div>
-        <div class="or">OR</div>
-    </div>
-
-*@
 
 
 <div class="wrapper fadeInDown">
@@ -56,17 +17,8 @@
         <a> </a>
         <a class="inactive underlineHover" asp-action="Register" style="color:#000000"> Sign up </a>
         <p></p><p></p>
-        <!-- Icon -->
-        @* <div class="fadeIn first">
-            <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
-        </div>*@
+      
 
-        <!-- Login Form -->
-        @* <form>
-            <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-            <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-            <input type="submit" class="fadeIn fourth" value="Log In">
-        </form>*@
         <form asp-action="Login">
 
             <input type="text" id="User Name" asp-for="UserName" class="fadeIn" placeholder="Username" />
@@ -88,5 +40,4 @@
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
-@*<script src="~/js/login-logout.js"></script>
-*@
+

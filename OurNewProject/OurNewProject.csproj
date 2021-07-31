@@ -14,12 +14,11 @@
   <ItemGroup>
     <None Include="Views\Home\BeerS.cshtml" />
     <None Include="Views\Home\Eilat.cshtml" />
-    <None Include="Views\Home\Hyadata.cshtml" />
     <None Include="Views\Home\Index.cshtml" />
     <None Include="Views\Home\Jerusalem.cshtml" />
     <None Include="Views\Home\About.cshtml" />
     <None Include="Views\Home\Privacy.cshtml" />
-    <None Include="Views\Home\RG.cshtml" />
+    <None Include="Views\Home\YouKnow.cshtml" />
     <None Include="Views\Home\Rishon.cshtml" />
     <None Include="Views\Home\Gallery.cshtml" />
     <None Include="Views\Home\Team.cshtml" />

@@ -56,11 +56,11 @@ namespace OurNewProject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Phone,Address,Hours")] Branch branch, int[] mySuppliers)
+        public async Task<IActionResult> Create([Bind("Id,Name,Phone,Address,Hours,mySupplier")] Branch branch, int[] mySupplier)
         {
 
             branch.mySupplier = new List<Supplier>();
-            branch.mySupplier.AddRange(_context.Supplier.Where(x => mySuppliers.Contains(x.Id)));
+            branch.mySupplier.AddRange(_context.Supplier.Where(x => mySupplier.Contains(x.Id)));
 
 
             if (ModelState.IsValid)
@@ -95,7 +95,7 @@ namespace OurNewProject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Phone,Address,Hours")] Branch branch, int[] mySuppliers)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Phone,Address,Hours,mySuppliers")] Branch branch, int[] mySuppliers)
         {
             if (id != branch.Id)
             {

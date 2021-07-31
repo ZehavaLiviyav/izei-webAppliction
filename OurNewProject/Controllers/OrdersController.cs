@@ -187,35 +187,6 @@ namespace OurNewProject.Controllers
         }
 
 
-        public async Task<IActionResult> AddToOrder(int id) //product id
-        {
-            try
-            {
-                Product product = _context.Product.Include(db => db.MyOrderList).FirstOrDefault(x => x.Id == id);
-                String userName = HttpContext.User.Identity.Name;
-                User user = _context.User.FirstOrDefault(x => x.UserName.Equals(userName));
-                Order order = _context.Order.Include(db => db.MyProductList)
-                 .FirstOrDefault(x => x.UserID == user.Id);
-
-
-                if (order.UserID == null)
-                    order.MyProductList = new List<Product>();
-                if (product.MyOrderList == null)
-                    product.MyOrderList = new List<Order>();
-
-                if (!(order.MyProductList.Contains(product) && product.MyOrderList.Contains(order)))
-                {
-
-                    order.MyProductList.Add(product);
-                    product.MyOrderList.Add(order);
-                    order.TotalPrice += product.Price;
-                    _context.Update(order);
-                    _context.Update(product);
-                    await _context.SaveChangesAsync();
-                }
-                return RedirectToAction(nameof(MyOrder));
-            }
-            catch { return RedirectToAction("PageNotFound", "Home"); }
-        }
+        
     }
 }

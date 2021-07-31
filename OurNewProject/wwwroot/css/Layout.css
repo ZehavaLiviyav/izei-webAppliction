@@ -1,4 +1,6 @@
-﻿.navbar {
+﻿@import url(http://fonts.googleapis.com/earlyaccess/alefhebrew.css);
+
+.navbar {
   /*  max-width: none;*/
     background: #090e46;
    /* height: 123px;

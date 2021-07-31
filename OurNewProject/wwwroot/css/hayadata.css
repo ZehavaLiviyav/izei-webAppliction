@@ -1,14 +1,14 @@
 ﻿
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,400;1,600&display=swap");
-
+/*@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,400;1,600&display=swap");
+*/
 * {
     box-sizing: border-box;
 }
 
-.body {
+body {
     background-color: #f7f8fc;
     font-family: "Open Sans", sans-serif;
-    /*    display: flex;*/
+    /*display: flex;*/
     align-items: center;
     justify-content: center;
     height: 100vh;
@@ -64,7 +64,7 @@
 }
 
 .tag-teal {
-    background-color: #212529;
+    background-color: #92d4e4;
 }
 
 .tag-purple {
@@ -72,7 +72,7 @@
 }
 
 .tag-pink {
-    background-color: #28a745;
+    background-color: #c62bcb;
 }
 
 .card-body h4 {
@@ -82,7 +82,6 @@
 .card-body p {
     font-size: 13px;
     margin: 0 0 40px;
-
 }
 
 .user {

@@ -33,19 +33,21 @@
   
     @foreach (var item in Model as ICollection<ProductJoin>)
     {
-        <div class="card">
+    <div class="card">
 
-            <img src=" @Html.DisplayFor(modelItem => item.pi.Imge) " alt="Denim Jeans" style="width:100%">
-            <h1 style="        color: #dc3545">  @Html.DisplayFor(modelItem => @item.p.Name)  </h1>
-            <p class="price">   @Html.DisplayFor(modelItem => item.p.Price)  ₪  </p>
-            <p>@Html.DisplayFor(modelItem => item.p.Description)</p>
+        <img src=" @Html.DisplayFor(modelItem => item.pi.Imge) " alt="Denim Jeans" style="width:100%">
+        <h1 style="        color: #dc3545">  @Html.DisplayFor(modelItem => @item.p.Name)  </h1>
+        <p class="price">   @Html.DisplayFor(modelItem => item.p.Price)  ₪  </p>
+        <p>@Html.DisplayFor(modelItem => item.p.Description)</p>
 
 
-            <form asp-controller="Orders" asp-action="AddToOrder" asp-route-id="@item.p.Id" method="post">
-                <button type="submit" class="btn btn-danger btn-sm card-background">
-                    Add To Cart
-                </button>
-            </form>
-        </div>
+        @*asp-controller="Orders" asp-action="AddToOrder" asp-route-id="@item.p.Id"*@
+
+        <form method="post">
+            <button type="submit" class="btn btn-danger btn-sm card-background">
+                Add To Cart
+            </button>
+        </form>
+    </div>
     }
 </div>

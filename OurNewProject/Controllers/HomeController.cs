@@ -30,15 +30,15 @@ namespace OurNewProject.Controllers
         public IActionResult BeerS() { return View(); }
         public IActionResult Eilat() { return View(); }
         public IActionResult Jerusalem() { return View(); }
-        public IActionResult RG() { return View(); }
+      
 
 
         public IActionResult Gallery() { return View(); }
 
 
-
+  public IActionResult YouKnow() { return View(); }
         public IActionResult About() { return View(); }
-        public IActionResult Hyadata() { return View(); }
+   
         public IActionResult Team() { return View(); }
 
         //  [Authorize]

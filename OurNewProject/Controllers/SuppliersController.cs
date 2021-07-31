@@ -56,7 +56,7 @@ namespace OurNewProject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Phone")] Supplier supplier, int[] myBranches)
+        public async Task<IActionResult> Create([Bind("Id,Name,Phone, myBranches")] Supplier supplier, int[] myBranches)
         {
             supplier.myBranches = new List<Branch>();
             supplier.myBranches.AddRange(_context.Branch.Where(x => myBranches.Contains(x.Id)));

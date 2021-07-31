@@ -7,9 +7,6 @@
 <head>
     <link href="https://fonts.googleapis.com/css?family=Cabin|Herr+Von+Muellerhoff|Source+Sans+Pro" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-    <link rel="stylesheet" href="~/css/reservation.css" />
-    <script src="~/js/reservation.js"></script>
-    <link rel="stylesheet" href="~/css/gallery.css">
     <link rel="stylesheet" href="~/css/About.css">
 
 </head>
@@ -17,10 +14,12 @@
 <br />
 <div class="text-center">
     <br />
-    <h2 class="ourTitle">Wano</h2>
-    <h1 class="menuTitle">STATISTICS</h1>
+   
+    <h1 class="menuTitle" style="color: #090e46"> <b>IZEI Ice Cream Statistics</b></h1>
+    
+    
     <u1>
-        <div class="aboutwall">
+        <div>
             <br />
             <div class="textabout">
                 <div>
@@ -62,7 +61,7 @@
                                 type: 'pie'
                             },
                             title: {
-                                text: 'Users VS admins'
+                                text: 'כמות המנהלים ~ כמות הלקוחות' 
                             },
                             yAxis: {
                                 allowDecimals: false,
@@ -95,7 +94,7 @@
                     <thead>
                         <tr>
                             <th></th>
-                            <th>Item Name</th>
+                            <th> שם הקטגוריה </th>
 
                         </tr>
                     </thead>
@@ -131,7 +130,7 @@
                                 type: 'column'
                             },
                             title: {
-                                text: 'How many products in each category'
+                                text: 'כמות המוצרים בכל קטגוריה'
                             },
                             plotOptions: {
                                 series: {
