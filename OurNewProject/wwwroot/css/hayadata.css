@@ -5,10 +5,10 @@
     box-sizing: border-box;
 }
 
-body {
-    background-color:#f7f8fc;
+.body {
+    background-color: #f7f8fc;
     font-family: "Open Sans", sans-serif;
-  /*  display: flex;*/
+    /*    display: flex;*/
     align-items: center;
     justify-content: center;
     height: 100vh;
@@ -64,7 +64,7 @@ body {
 }
 
 .tag-teal {
-    background-color: #92d4e4;
+    background-color: #212529;
 }
 
 .tag-purple {
@@ -72,7 +72,7 @@ body {
 }
 
 .tag-pink {
-    background-color: #c62bcb;
+    background-color: #28a745;
 }
 
 .card-body h4 {
@@ -82,6 +82,7 @@ body {
 .card-body p {
     font-size: 13px;
     margin: 0 0 40px;
+
 }
 
 .user {

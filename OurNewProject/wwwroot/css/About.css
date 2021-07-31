@@ -1,4 +1,6 @@
-﻿
+﻿aboutwall {
+    background: url("https://i.ibb.co/qr7JSXb/199787363-4365141293549477-5593701837490987339-n.jpg") fixed bottom;
+}
 
 .textabout {
     background-color: white;
@@ -7,4 +9,8 @@
     border-radius: 2px;
     opacity: 95%;
     width: 720px;
+}
+.video {
+    display: block;
+    margin: 0 auto;
 }
