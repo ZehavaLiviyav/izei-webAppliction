@@ -200,7 +200,7 @@ namespace OurNewProject.Controllers
         }
 
 
-        public async Task<IActionResult> Search(string productName, string price, string category)
+        public async Task<IActionResult> Search(string productName, string price)
         {
             try
             {
@@ -210,16 +210,9 @@ namespace OurNewProject.Controllers
                 //Filter by name
                 products = products.Where(x => x.Name.Contains(productName));
                 products = products.Where(x => x.Price <= priceInt);
-               // products = from p in products join c in _context.Category on p.CategoryId equals c.Id where c.Name == category select p;
-                /*
-                var query =
-                from product in _context.Product
-                join image in _context.ProductImage on product.Id equals image.productId
-  
-                select new ProductJoin(product, image);*/
+               
                 var query = from p in products join image in _context.ProductImage on p.Id equals image.productId select new ProductJoin(p, image);
                 
-                //var applicationDbContext = _context.Product.Include(a => a.Category).Where(a => a.Name.Contains(productName) && a.Category.Name.Equals(category) && a.Price <= p);
                 return View("MenuSearch", await query.ToListAsync());
             }
             catch { return RedirectToAction("PageNotFound", "Home"); }

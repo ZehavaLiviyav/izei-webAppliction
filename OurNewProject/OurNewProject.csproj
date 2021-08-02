@@ -5,13 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="wwwroot\photos\**" />
-    <Content Remove="wwwroot\photos\**" />
-    <EmbeddedResource Remove="wwwroot\photos\**" />
-    <None Remove="wwwroot\photos\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="Views\Home\BeerS.cshtml" />
     <None Include="Views\Home\Eilat.cshtml" />
     <None Include="Views\Home\Index.cshtml" />
@@ -31,6 +24,10 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Photos\" />
   </ItemGroup>
 
 </Project>

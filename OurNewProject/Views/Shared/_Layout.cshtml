@@ -56,6 +56,8 @@
 
                         @if (Context.User.IsInRole("Admin"))
                         {
+                            
+                            @*
                             <li class="nav-item">
                                 <a class="nav-link " style="font-family: 'Bona Nova', serif; color: #d6d6a2" asp-area="" asp-controller="Users" asp-action="Index">לקוחות</a>
                             </li>
@@ -74,7 +76,23 @@
                             <li class="nav-item">
                                 <a class="nav-link" style="font-family: 'Bona Nova', serif; color: #d6d6a2" asp-area="" asp-controller="Users" asp-action="Statistics">סטטיסטיקה</a>
                             </li>
+*@
 
+
+
+                            <li class="nav-item dropdown">
+                                <a style="font-family: 'Bona Nova', serif; color: #d6d6a2" class="btn dropdown-toggle; text-right" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                                    אפשריות מנהלים
+                                </a>
+                                <ul style="background-color:#090e46" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li class="text-center"><a style="font-family: 'Bona Nova', serif; color: #d6d6a2" class="dropdown-item; text-right" href="\Users\Index">לקוחות</a></li>
+                                    <li class="text-center"><a style="font-family: 'Bona Nova', serif; color: #d6d6a2" class="dropdown-item; text-right" href="\Products\Index">מוצרים</a></li>
+                                    <li class="text-center"><a style="font-family: 'Bona Nova', serif; color: #d6d6a2" class="dropdown-item; text-right" href="\Categories\Index">קטגוריות</a></li>
+                                    <li class="text-center"><a style="font-family: 'Bona Nova', serif; color: #d6d6a2" class="dropdown-item; text-right" href="\Branches\Index">סניפים</a></li>
+                                    <li class="text-center"><a style="font-family: 'Bona Nova', serif; color: #d6d6a2" class="dropdown-item; text-right" href="\Suppliers\Index">ספקים</a></li>
+                                    <li class="text-center"><a style="font-family: 'Bona Nova', serif; color: #d6d6a2" class="dropdown-item; text-right" href="\Users\Statistics">סטטיסטיקה</a></li>
+                                </ul>
+                            </li>
 
                         }
 
