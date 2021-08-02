@@ -34,13 +34,13 @@
         </select>
         <br />
         <label for="categorie" style="color:white;">Category :</label><br />
-        <select class="choiceStyle" name="category" id="category" required>
+    @*    <select class="choiceStyle" name="category" id="category" required>
             @foreach (var item in Model as ICollection<ProductJoin>)
             {
-                <option value="@item.p">@item.p.CategoryId</option>
+                <option value="@item.p">@item.p.Category.Name</option>
 
             }
-        </select>
+        </select>*@
         <br /><br />
         <button type="submit" value="Search" class="btn btn-dark">Search</button>
     </form>

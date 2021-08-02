@@ -27,6 +27,16 @@ namespace OurNewProject.Controllers
             return View(await _context.Category.ToListAsync());
         }
 
+
+        public async Task<IActionResult> Search(string query)
+        {
+            try
+            {
+                return Json(await _context.Category.Where(c => c.Name.Contains(query)).ToListAsync());
+            }
+            catch { return RedirectToAction("PageNotFound", "Home"); }
+        }
+
         // GET: Categories/Details/5
         public async Task<IActionResult> Details(int? id)
         {

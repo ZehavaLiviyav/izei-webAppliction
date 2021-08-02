@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using OurNewProject.Data;
 using OurNewProject.Models;
 
+
 namespace OurNewProject.Controllers
 {
     public class ProductImagesController : Controller
@@ -65,6 +66,7 @@ namespace OurNewProject.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+           
             ViewData["productId"] = new SelectList(_context.Product, "Id", "Id", productImage.productId);
             return View(productImage);
         }
@@ -119,6 +121,7 @@ namespace OurNewProject.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["productId"] = new SelectList(_context.Product, "Id", "Id", productImage.productId);
+            
             return View(productImage);
         }
 

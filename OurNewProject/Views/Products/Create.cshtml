@@ -4,45 +4,54 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<head>
 
-<h4>Product</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+    <link rel="stylesheet" href="~/css/Create.css" />
+
+</head>
+<body>
+
+    <div class="text-center" id="page-wrapper">
+        <h1 style="color: #090e46">צור מוצר חדש </h1>
         <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <label for="default" asp-for="Name" class="control-label"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+
+            <label asp-for="Price" class="control-label"></label>
+            <input min="0" asp-for="Price" class="form-control" />
+            <span asp-validation-for="Price" class="text-danger"></span>
+
+            <label asp-for="Description" class="control-label"></label>
+            <input asp-for="Description" class="form-control" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+
+            <label asp-for="CategoryId" class="control-label"> קטגוריה</label>
+            <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.Categoriess"></select>
+            <br />
             <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
+                <input style="background-color:#d6d6a2" type="submit" value="Create" />
             </div>
-            <div class="form-group">
-                <label asp-for="Price" class="control-label"></label>
-                <input asp-for="Price" class="form-control" />
-                <span asp-validation-for="Price" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-        
-            <div class="form-group">
-                <label asp-for="CategoryId" class="control-label"></label>
-                <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.Categoriess"></select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
+
         </form>
+
+        @*<div>
+            <a asp-action="Create" asp-controller="ProductImages">  <b> כעת , לאחר שיצרת מוצר לחץ כאן כדי להוסיף לו תמונה </b></a>
+        </div>*@
+
+        <div>
+            <a > <b> לאחר שיצרת מוצר לא לשכוח להוסיף לו תמונה </b></a>
+        </div>
+
+        <div>
+            <a class="text-left" asp-action="Index"> חזור אחורה </a>
+        </div>
+
     </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
+</body>
+    
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

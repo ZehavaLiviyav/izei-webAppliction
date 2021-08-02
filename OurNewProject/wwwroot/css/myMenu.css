@@ -1,0 +1,90 @@
+﻿
+.menu-btns {
+    padding: 0.6rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+
+.page_title h1 {
+    color: #d6d6a2;
+    font-weight: 700;
+    line-height: 2;
+    margin-bottom: 0;
+    position: relative;
+    text-transform: capitalize;
+}
+
+
+.button {
+    background-color: #d6d6a2;
+    border: none;
+    color: #090e46;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+
+.page_title {
+    padding: 30px 0px;
+}
+
+
+
+    .page_title h1::before {
+        background: #090e46;
+        width: 70px;
+        height: 2px;
+        position: absolute;
+        content: '';
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .page_title h1::after {
+        position: absolute;
+        content: '';
+        background: #d6d6a2;
+        width: 30px;
+        height: 2px;
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+}
+
+.price {
+    color: grey;
+    font-size: 22px;
+}
+
+.card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #090e46;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+    .card button:hover {
+        opacity: 0.7;
+    }

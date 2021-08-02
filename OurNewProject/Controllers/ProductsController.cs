@@ -27,6 +27,19 @@ namespace OurNewProject.Controllers
             return View(await ourNewProjectContext.ToListAsync());
         }
 
+
+        public async Task<IActionResult> Buttom(string ctN)
+        {
+            var outNewP = _context.Product.Include(c => c.Category).Where(p => p.Category.Name.Equals(ctN) ||
+                                    (ctN == null));
+            return View("Menu", await outNewP.ToListAsync());
+        }
+
+       
+
+
+
+
         // GET: Products/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -65,6 +78,8 @@ namespace OurNewProject.Controllers
         {
             if (ModelState.IsValid)
             {
+                
+
                 _context.Add(product);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -172,11 +187,7 @@ namespace OurNewProject.Controllers
             return View("Menu", await ProjectContext.ToListAsync());
         }*/
 
-        public async Task<IActionResult> menuTest()
-        {
-            return View();
-        }
-
+       
         public async Task<IActionResult> Menu()
         {
             var ProjectContext = _context.Product.Include(c => c.Category);
@@ -187,6 +198,33 @@ namespace OurNewProject.Controllers
                 select new ProductJoin(product, image);
             return View("Menu", await query.ToListAsync());
         }
+
+
+        public async Task<IActionResult> Search(string productName, string price, string category)
+        {
+            try
+            {
+                int priceInt = Int32.Parse(price);
+                //Get all products
+                var products = from p in _context.Product select p;
+                //Filter by name
+                products = products.Where(x => x.Name.Contains(productName));
+                products = products.Where(x => x.Price <= priceInt);
+               // products = from p in products join c in _context.Category on p.CategoryId equals c.Id where c.Name == category select p;
+                /*
+                var query =
+                from product in _context.Product
+                join image in _context.ProductImage on product.Id equals image.productId
+  
+                select new ProductJoin(product, image);*/
+                var query = from p in products join image in _context.ProductImage on p.Id equals image.productId select new ProductJoin(p, image);
+                
+                //var applicationDbContext = _context.Product.Include(a => a.Category).Where(a => a.Name.Contains(productName) && a.Category.Name.Equals(category) && a.Price <= p);
+                return View("MenuSearch", await query.ToListAsync());
+            }
+            catch { return RedirectToAction("PageNotFound", "Home"); }
+        }
+
 
     }
 

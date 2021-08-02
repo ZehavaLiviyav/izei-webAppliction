@@ -21,11 +21,13 @@ namespace OurNewProject.Models
 
         [Required]
         [Display(Name = "שם")]
+        [DataType(DataType.EmailAddress)]
         public String UserName { get; set; }
 
-        [Required]
+       
         [Display(Name = "סיסמא")]
         [DataType(DataType.Password)]
+        [Required(ErrorMessage = "This field is required.")]
         public String Password { get; set; }
 
          [Display(Name = "טיפוס")]

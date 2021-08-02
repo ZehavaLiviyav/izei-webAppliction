@@ -4,33 +4,42 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
 
-<h4>ProductImage</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<head>
+
+    <link rel="stylesheet" href="~/css/Create.css" />
+
+</head>
+<body>
+
+    <div class="text-center" id="page-wrapper">
+        <h1 style="color: #090e46"> צור תמונה </h1>
         <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="productId" class="control-label"></label>
-                <select asp-for="productId" class ="form-control" asp-items="ViewBag.productId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Imge" class="control-label"></label>
-                <input asp-for="Imge" class="form-control" />
-                <span asp-validation-for="Imge" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+            <label asp-for="productId" class="control-label"></label>
+            <select asp-for="productId" class="form-control" asp-items="ViewBag.productId"></select>
+
+            <label asp-for="Imge" class="control-label"></label>
+            <input asp-for="Imge" class="form-control" />
+            <span asp-validation-for="Imge" class="text-danger"></span>
+
+
+            <br />
+            <div class="form-group">
+                <input style="background-color:#d6d6a2" type="submit" value="Create" />
+            </div>
+
+        </form>
+
+
+        <div>
+            <a class="text-left" asp-action="Index"> חזור אחורה </a>
+        </div>
+
+    </div>
+
+</body>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

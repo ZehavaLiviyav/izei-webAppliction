@@ -3,30 +3,42 @@
 @{
     ViewData["Title"] = "Create";
 }
+<head>
 
-<h1>Create</h1>
+    <link rel="stylesheet" href="~/css/Create.css" />
 
-<h4>Category</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+</head>
+
+
+<body>
+
+    <div class="text-center" id="page-wrapper">
+        <h1 style="color: #090e46"> צור קטגוריה </h1>
         <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+            <label asp-for="Name" class="control-label"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+
+
+            <br />
+            <div class="form-group">
+                <input style="background-color:#d6d6a2" type="submit" value="Create" />
+            </div>
+
+        </form>
+
+
+        <div>
+            <a class="text-left" asp-action="Index"> חזור אחורה </a>
+        </div>
+
+    </div>
+
+</body>
+
+
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

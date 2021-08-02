@@ -13,6 +13,8 @@ namespace OurNewProject.Models
         [Display(Name = "שם")]
         public string Name { get; set; }
         [Display(Name = "מספר טלפון")]
+        [DataType(DataType.PhoneNumber)]
+        [RegularExpression(@"^[0-9\s]*$")]
         public String Phone { get; set; }
         [Display(Name = "כתובת")]
         public String Address { get; set; }

@@ -18,7 +18,7 @@ namespace OurNewProject.Models
         [Display(Name = "תיאור")]
         public string Description { get; set; }
         public int CategoryId { get; set; }
-        [Display(Name = "קאגוריה")]
+        [Display(Name = "קטגוריה")]
         public Category Category { get; set; }
         [Display(Name = "תמונה")]
         public ProductImage productImage { get; set; }

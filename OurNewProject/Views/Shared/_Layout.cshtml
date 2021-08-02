@@ -19,9 +19,7 @@
     
 </head>
 
-<body>
-
-  @*  navbar-light  border-bottom*@
+<body >
 
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm box-shadow mb-3 " style="background-color:#090e46">
@@ -37,8 +35,8 @@
 
 
                         <li class="nav-item">
-                         
-                                <a class="nav-link " style="font-family: 'Bona Nova', serif; color: #d6d6a2" asp-area="" asp-controller="Home" asp-action="Index">דף הבית</a>
+
+                            <a class="nav-link " style="font-family: 'Bona Nova', serif; color: #d6d6a2" asp-area="" asp-controller="Home" asp-action="Index">דף הבית</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" style="font-family: 'Bona Nova', serif; color: #d6d6a2" asp-area="" asp-controller="Home" asp-action="YouKnow">הידעת?</a>
@@ -59,14 +57,24 @@
                         @if (Context.User.IsInRole("Admin"))
                         {
                             <li class="nav-item">
+                                <a class="nav-link " style="font-family: 'Bona Nova', serif; color: #d6d6a2" asp-area="" asp-controller="Users" asp-action="Index">לקוחות</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" style="font-family: 'Bona Nova', serif; color: #d6d6a2" asp-area="" asp-controller="Products" asp-action="Index">מוצרים</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link " style="font-family: 'Bona Nova', serif; color: #d6d6a2" asp-area="" asp-controller="Users" asp-action="Index">לקוחות</a>
+                                <a class="nav-link" style="font-family: 'Bona Nova', serif; color: #d6d6a2" asp-area="" asp-controller="Categories" asp-action="Index">קטגוריות</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" style="font-family: 'Bona Nova', serif; color: #d6d6a2" asp-area="" asp-controller="branches" asp-action="Index">סניפים</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" style="font-family: 'Bona Nova', serif; color: #d6d6a2" asp-area="" asp-controller="Suppliers" asp-action="Index">ספקים</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" style="font-family: 'Bona Nova', serif; color: #d6d6a2" asp-area="" asp-controller="Users" asp-action="Statistics">סטטיסטיקה</a>
                             </li>
+
 
                         }
 
