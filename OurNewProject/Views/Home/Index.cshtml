@@ -3,54 +3,139 @@
 }
 
 
+<!DOCTYPE html>
+<html lang="en">
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+    body, h1, h2, h3, h4, h5, h6 {
+        font-family: "Lato", sans-serif
+    }
+
+    .w3-bar, h1, button {
+        font-family: "Montserrat", sans-serif
+    }
+
+    .fa-anchor, .fa-coffee {
+        font-size: 200px
+    }
+
+    .hero-image {
+        background-image: url("/w3images/photographer.jpg");
+        background-color: #cccccc;
+        height: 650px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+</style>
+<body>
 
 
-<body style="background-color: #d6d6a2">
 
+    <!-- Header -->
+    <header class="w3-container w3-red w3-center; hero-image" style="padding:128px 16px; background-image:url(../LOGO.jpeg)">
+        @* <h1 class="w3-margin w3-jumbo">START PAGE</h1>*@
+        @*   <p class="w3-xlarge">Template by w3.css</p>*@
 
-    <div class="cid" id="cid">
+        <form asp-controller="Branches" asp-action="TheBranch">   <button class="w3-button w3-padding-large w3-large w3-margin-top text-right" style="background-color: #fcdbcc; color: #5a382f; border-radius: 80px;">גש לתפריט שלנו</button></form>
+        <form asp-controller="Branches" asp-action="TheBranch">   <button class="w3-button w3-padding-large w3-large w3-margin-top" style="background-color: #fcdbcc; color: #5a382f; border-radius: 80px;">גש לתפריט שלנו</button></form>
 
-        <section class="carousel-pad" >
-            <a href="\Home\Gallery">
-                <div   id="home" class="carousel slide main; text-center" style="height:800px data-ride="carousel">
-                    <div class="tag-gallery"><h5>Coming Soon !!!</h5></div>
-                    <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-                    </ol>
-                    <div class="carousel-inner" style="border-radius:25px;">
-                        <div class="carousel-item active">
-                            <img class="d-block"  src="https://scontent.ftlv6-1.fna.fbcdn.net/v/t39.30808-6/228829681_758397581561320_6825572462461335552_n.png?_nc_cat=105&ccb=1-3&_nc_sid=730e14&_nc_ohc=MGRCgLBuM3MAX94LCWR&tn=BACNfLudBkk3VGcy&_nc_ht=scontent.ftlv6-1.fna&oh=f0d2c25552333f35f89266ba94bb682b&oe=610CA1BE"  alt="First slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block " src="https://scontent.ftlv6-1.fna.fbcdn.net/v/t39.30808-6/226788526_754623908605354_2388674748591718896_n.png?_nc_cat=108&ccb=1-3&_nc_sid=730e14&_nc_ohc=VOJisUlMYaIAX_v0o_0&tn=BACNfLudBkk3VGcy&_nc_ht=scontent.ftlv6-1.fna&oh=399476e2ccaf11d6a4cd8cd2bc63b5ff&oe=610C9FF1" alt="Second slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block " src="https://scontent.ftlv6-1.fna.fbcdn.net/v/t39.30808-6/226864359_754623895272022_7310758689881530843_n.png?_nc_cat=104&ccb=1-3&_nc_sid=730e14&_nc_ohc=uyR_L7KRFIUAX8Q0pms&_nc_ht=scontent.ftlv6-1.fna&oh=9e7c61b147797fbae3c4d0984af65bda&oe=610CD59A" alt="Third slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block " src="https://scontent.ftlv6-1.fna.fbcdn.net/v/t39.30808-6/226836191_754623961938682_7373053499286711741_n.png?_nc_cat=105&ccb=1-3&_nc_sid=730e14&_nc_ohc=Ck5o38lLA28AX_hd6uj&_nc_ht=scontent.ftlv6-1.fna&oh=193c3a46b3e84ffbf6f486e3ee6983e7&oe=610CB08F" alt="four slide">
-                        </div>
-                    </div>
-                        <p class="carousel-control-prev" href="#home" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only" s>Previous</span>
-                        </p>
-                        <p class="carousel-control-next" href="#home" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </p>
+    </header>
+
+    <!-- First Grid -->
+    <div class="w3-row-padding w3-padding-64 w3-container">
+        <div class="w3-content">
+            <div class="w3-twothird">
+
+               <br />
+                <br />
+                <h1 class="text-center">IZEI Ice Cream</h1>
+                <div class="w3-padding-32; text-center">
+                    <h5 class="text-center">
+                        ברוך הבא לאתר הרשמי של גלידת IZEI !
+                    </h5>
+                    <h5 class="text-center">
+                        פה תוכלו להנות ממגוון סוגי גלידות ויוגורטים טעימים בריאים וייחודים !
+                    </h5>
+                    <h5 class="text-center">
+                        כל הגלידות והיוגורטים שלנו הגיעו אלינו מארץ הגלידה הבלתי מעורערת - איטליה !
+                    </h5>
+                    <h5 class="text-center">
+                        אז מאחלים לכם הנאה מרבית וכמובן אם נהנתם ספרו לחבריכם,לא נהנתם? ספרו לנו !
+                    </h5>
+                 
                 </div>
-            </a>
-        </section>
+            </div>
 
-     </div>
+            <div class="w3-third w3-center">
+                @*<i class="fa fa-ice-cream w3-padding-64 w3-text-red"></i>*@
+                <i class='fas fa-ice-cream w3-padding-64' style='font-size: 170px;color: #090e46'></i>
+            </div>
+        </div>
+    </div>
 
+    <!-- Second Grid -->
+    <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+        <div class="w3-content">
+            <div class="w3-third w3-center">
+                <br />
+                <i class="fas fa-ice-cream w3-padding-64 w3-margin-right" style='font-size: 250px;color: #d6d6a2'></i>
+            </div>
 
+            <div class="w3-twothird">
+                <br />
+                <br />
+                <h1 class="text-center">IZEI Ice Cream</h1>
+                <div class="w3-padding-32">
+                      <h5 class="text-center">
+                     
+                          גלידת IZEI נוסדה ב2021 במסגרת פרויקט סיכום קורס אפליקציות במכללה למנהל בראשון לציון
+                      </h5>
+                    <h5 class="text-center">
+                        במסגרת הקורס למדנו HTML5,CSS,JavaScript
+                    </h5>
+                    <h5 class="text-center">
+                        גלידת IZEI נוצרה בידי המפתחים איתי ביאזי וזהבה ליוייב אשר בנוסף לקוד המעולה יצרו גלידה ויוגורטים במגוון טעמים ייחודים שלא נראו לעולם בארץ !
+                    </h5>
+                       <h5 class="text-center">
+                           מחכים לכם בסניפים ובמשלוחים !
 
+                       </h5>
 
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+        <h1 class="w3-margin w3-xlarge">במהלך היום שלך אכלת גלידת IZEI? כל השאר זה בונוס</h1>
+    </div>
+
+  
+
+    <script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+    </script>
 
 </body>
+</html>
+
+
