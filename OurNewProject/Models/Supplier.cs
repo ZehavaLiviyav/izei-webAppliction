@@ -10,8 +10,10 @@ namespace OurNewProject.Models
     {
         [Key]
         public int Id { get; set; }
+        [Required]
         [Display(Name = "שם")]
         public string Name { get; set; }
+        [Required]
         [Display(Name = "מספר טלפון")]
         public String Phone { get; set; }
         [Display(Name = "סניפים")]

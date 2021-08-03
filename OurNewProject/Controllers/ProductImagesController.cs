@@ -49,6 +49,8 @@ namespace OurNewProject.Controllers
         // GET: ProductImages/Create
         public IActionResult Create()
         {
+            ViewData["PN"] = new SelectList(_context.Product, nameof(Product.Id), nameof(Product.Name));
+
             ViewData["productId"] = new SelectList(_context.Product, "Id", "Id");
             return View();
         }

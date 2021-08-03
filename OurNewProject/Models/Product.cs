@@ -12,12 +12,16 @@ namespace OurNewProject.Models
         [Key]
         public int Id { get; set; }
         [Display(Name = "שם")]
+        [Required]
         public String Name { get; set; }
+        [Required]
         [Display(Name = "מחיר")]
         public double Price { get; set; }
+        [Required]
         [Display(Name = "תיאור")]
         public string Description { get; set; }
         public int CategoryId { get; set; }
+        [Required]
         [Display(Name = "קטגוריה")]
         public Category Category { get; set; }
         [Display(Name = "תמונה")]

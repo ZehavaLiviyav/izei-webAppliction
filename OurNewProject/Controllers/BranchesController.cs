@@ -46,6 +46,8 @@ namespace OurNewProject.Controllers
         // GET: Branches/Create
         public IActionResult Create()
         {
+
+            ModelState.AddModelError("Phone", "מספר הטלפון חייב להתחיל ב 05 , 10 מספרים");
             ViewData["Suppliers"] = new SelectList(_context.Supplier, nameof(Supplier.Id), nameof(Supplier.Name));
 
             return View();
