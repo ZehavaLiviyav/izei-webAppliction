@@ -21,8 +21,7 @@ namespace OurNewProject.Models
 
         [Required]
         [Display(Name = "שם")]
-        [DataType(DataType.EmailAddress)]
-        public String UserName { get; set; }
+           public String UserName { get; set; }
 
        
         [Display(Name = "סיסמא")]

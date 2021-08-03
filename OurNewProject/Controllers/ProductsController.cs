@@ -28,17 +28,8 @@ namespace OurNewProject.Controllers
         }
 
 
-        public async Task<IActionResult> Buttom(string ctN)
-        {
-            var outNewP = _context.Product.Include(c => c.Category).Where(p => p.Category.Name.Equals(ctN) ||
-                                    (ctN == null));
-            return View("Menu", await outNewP.ToListAsync());
-        }
-
+     
        
-
-
-
 
         // GET: Products/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -191,7 +182,6 @@ namespace OurNewProject.Controllers
         public async Task<IActionResult> Menu()
         {
             var ProjectContext = _context.Product.Include(c => c.Category);
-
             var query =
                 from product in _context.Product
                 join image in _context.ProductImage on product.Id equals image.productId
@@ -199,6 +189,17 @@ namespace OurNewProject.Controllers
             return View("Menu", await query.ToListAsync());
         }
 
+        public async Task<IActionResult> Buttom(string ctN)
+        {
+
+           var outNewP = _context.Product.Include(c => c.Category).Where(p => p.Category.Name.Equals(ctN) ||
+                                    (ctN == null));
+
+            var query = from p in outNewP join image in _context.ProductImage on p.Id equals image.productId select new ProductJoin(p, image);
+
+            return View("Menu", await query.ToListAsync());
+
+        }
 
         public async Task<IActionResult> Search(string productName, string price)
         {
@@ -211,15 +212,16 @@ namespace OurNewProject.Controllers
                 products = products.Where(x => x.Name.Contains(productName));
                 products = products.Where(x => x.Price <= priceInt);
                
+
+
                 var query = from p in products join image in _context.ProductImage on p.Id equals image.productId select new ProductJoin(p, image);
                 
                 return View("MenuSearch", await query.ToListAsync());
             }
             catch { return RedirectToAction("PageNotFound", "Home"); }
         }
-
-
     }
+
 
     public class ProductJoin
     {

@@ -4,42 +4,102 @@
     ViewData["Title"] = "Index";
 }
 
-<h1 class="text-center">רשימת הלקוחות</h1>
+<h1 style="color: #d6d6a2" class="text-center">רשימת הלקוחות</h1>
+
+
+<br />
+
+<form class="text-center" asp-action="SearchU">
+    <input style="background-color:#d6d6a2" name="query" id="query" placeholder="הכנס ערך" autocomplete="off" />
+    <input style="background-color:#d6d6a2" type="submit" value="חפש" />
+</form>
+
+
+<br />
+
+
+<div class="text-center">
+    <button style="background-color:#d6d6a2"> <a asp-area="" asp-action="Index"> אפס רשימה </a></button>
+</div>
+
+
+
+<br />
+
 
 
 <table class="table">
     <thead>
-        <tr>
-            <th>
+        <tr style=" background-color: #090e46; color: #d6d6a2 ; ">
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.UserName)
             </th>
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.Password)
             </th>
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th class="text-center">
+                הסר לקוח
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Password)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Type)
-            </td>
-            <td>@*
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |*@
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+                <td class="text-center">
+                    @*
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |*@
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+
+
+@section Scripts{
+
+    <script src="~/js/SearchU.js"></script>
+
+    <script type="text/html" id="hidden-template">
+        <tr>
+            <td class="text-center">
+                {userName}
+            </td>
+            <td class="text-center">
+                {password}
+            </td>
+            <td class="text-center">
+                {type}
+            </td>
+
+
+
+            <td class="text-center">
+                <a class="text-center" href="/Users/Delete/{id}">Delete</a>
+            </td>
+
+
+            @* <td>
+                    <a href="/Categories/Edit/{id}">Edit</a> |
+                    <a href="/Categories/Details/{id}">Details</a> |
+                    <a href="/Categories/Delete/{id}">Delete</a>
+                </td>*@
+        </tr>
+    </script>
+}

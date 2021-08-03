@@ -436,7 +436,16 @@ namespace OurNewProject.Controllers
         }
 
 
-    
+        public async Task<IActionResult> SearchU(string query)
+        {
+            try
+            {
+                return Json(await _context.User.Where(c => c.UserName.Contains(query)).ToListAsync());
+
+            }
+            catch { return RedirectToAction("PageNotFound", "Home"); }
+        }
+
 
 
         [HttpGet]
