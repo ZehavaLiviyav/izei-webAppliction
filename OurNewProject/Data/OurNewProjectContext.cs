@@ -15,7 +15,7 @@ namespace OurNewProject.Data
         }
         public DbSet<OurNewProject.Models.User> User { get; set; }
         public DbSet<OurNewProject.Models.Category> Category { get; set; }
-        public DbSet<OurNewProject.Models.Order> Order { get; set; }
+    /*    public DbSet<OurNewProject.Models.Order> Order { get; set; }*/
         public DbSet<OurNewProject.Models.Product> Product { get; set; }
         public DbSet<OurNewProject.Models.ProductImage> ProductImage { get; set; }
         public DbSet<OurNewProject.Models.Supplier> Supplier { get; set; }

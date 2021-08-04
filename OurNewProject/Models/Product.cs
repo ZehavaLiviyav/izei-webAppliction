@@ -23,13 +23,12 @@ namespace OurNewProject.Models
         [Display(Name = "תיאור")]
         public string Description { get; set; }
         public int CategoryId { get; set; }
-        [Required]
         [Display(Name = "קטגוריה")]
         public Category Category { get; set; }
         [Display(Name = "תמונה")]
         public ProductImage productImage { get; set; }
-        [Display(Name = "הזמנות")]
-        public List<Order> MyOrderList { get; set; }
+   /*     [Display(Name = "הזמנות")]
+        public List<Order> MyOrderList { get; set; }*/
        
     }
 }
