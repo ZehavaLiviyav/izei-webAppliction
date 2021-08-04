@@ -111,14 +111,15 @@ namespace OurNewProject.Controllers
             {
                 try
                 {
-                    Supplier sup = _context.Supplier.Include(p => p.myBranches).FirstOrDefault(p => p.Id == supplier.Id);
+                    // Supplier sup = _context.Supplier.Include(p => p.myBranches).FirstOrDefault(p => p.Id == supplier.Id);
 
                     supplier.myBranches = new List<Branch>();
                     supplier.myBranches.AddRange(_context.Branch.Where(x => myBranches.Contains(x.Id)));
 
+
                     if (ModelState.IsValid)
                     {
-                        _context.Add(supplier);
+                        _context.Update(supplier);
                         await _context.SaveChangesAsync();
                         return RedirectToAction(nameof(Index));
 

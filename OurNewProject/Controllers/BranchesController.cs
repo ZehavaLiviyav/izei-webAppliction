@@ -104,8 +104,7 @@ namespace OurNewProject.Controllers
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Phone,Address,Hours,mySuppliers")] Branch branch, int[] mySuppliers)
         {
-            if (id != branch.Id)
-            {
+            if (id != branch.Id){
                 return NotFound();
             }
 
