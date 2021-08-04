@@ -189,6 +189,7 @@ namespace OurNewProject.Controllers
        
         public async Task<IActionResult> Menu()
         {
+            ViewData["Categoriess"] = new SelectList(_context.Category, nameof(Category.Id), nameof(Category.Name));
             var ProjectContext = _context.Product.Include(c => c.Category);
             var query =
                 from product in _context.Product
@@ -199,6 +200,7 @@ namespace OurNewProject.Controllers
 
         public async Task<IActionResult> Buttom(string ctN)
         {
+
 
            var outNewP = _context.Product.Include(c => c.Category).Where(p => p.Category.Name.Equals(ctN) ||
                                     (ctN == null));
@@ -211,6 +213,7 @@ namespace OurNewProject.Controllers
 
         public async Task<IActionResult> Search(string productName, string price)
         {
+            ViewData["Categoriess"] = new SelectList(_context.Category, nameof(Category.Id), nameof(Category.Name));
             try
             {
                 int priceInt = Int32.Parse(price);
@@ -220,8 +223,6 @@ namespace OurNewProject.Controllers
                 products = products.Where(x => x.Name.Contains(productName));
                 products = products.Where(x => x.Price <= priceInt);
                
-
-
                 var query = from p in products join image in _context.ProductImage on p.Id equals image.productId select new ProductJoin(p, image);
                 
                 return View("MenuSearch", await query.ToListAsync());

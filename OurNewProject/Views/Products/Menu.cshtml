@@ -23,32 +23,28 @@
     </div>
 </div>
 
+<aside>
+    <p class="text-center" style="font-family: 'Bona Nova';color:#d6d6a2">IZEI Ice Cream</p>
+</aside>
 
 <div class="text-center">
     <form class="formStyle" asp-controller="Products" asp-action="Search">
         <label class="text-dark text-center"> שם המוצר :</label><br />
         <input type="text" id="productName" name="productName" required min="1"><br />
         <label class="text-dark text-center" for="price">מחיר מקסימלי : </label><br />
-                                                                                <select class="choiceStyle" name="price" id="price" required>
-                                                                                    <option value="20">20</option>
-                                                                                    <option value="25">25</option>
-                                                                                    <option value="30">30</option>
-                                                                                    <option value="35">35</option>
-                                                                                    <option value="50">50</option>
-                                                                                </select>
+        <select class="choiceStyle" name="price" id="price" required>
+            <option value="20">20</option>
+            <option value="25">25</option>
+            <option value="30">30</option>
+            <option value="35">35</option>
+            <option value="50">50</option>
+        </select>
+
         <br />
 
 
-        @* <label for="categorie" style="color:white;">קטגוריה  :</label><br />
-            <select class="choiceStyle" name="category" id="category" required>
-                @foreach (var item in Model as ICollection<ProductJoin>)
-                {
-                    <option value="@item.p.Category.Name">@item.p.Category.Name</option>
-
-                }
-            </select>*@
         <br /><br />
-        <button type="submit" value="Search" class="btn btn-dark">Search</button>
+        <button type="submit" value="Search" class="btn btn-dark">חפש</button>
     </form>
 </div>
 
@@ -58,6 +54,7 @@
 
 
 <div class="menu-btns">
+
     <form asp-action="Buttom"> <button style="font-family: 'Bona Nova'" value="" class="button" id="allCat">  <b> הכל</b></button></form>
     <form asp-action="Buttom"> <button style="font-family: 'Bona Nova'" value="גלידות" type="submit" class="button" name="ctN"> <b> גלידות</b> </button></form>
     <form asp-action="Buttom"> <button style="font-family: 'Bona Nova'" value="יוגורטים" type="submit" class="button" name="ctN"> <b> יוגורטים</b>  </button></form>
