@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -20,12 +21,14 @@ namespace OurNewProject.Controllers
         }
 
         // GET: Suppliers
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Supplier.ToListAsync());
         }
 
         // GET: Suppliers/Details/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -44,6 +47,7 @@ namespace OurNewProject.Controllers
         }
 
         // GET: Suppliers/Create
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             ViewData["Branch"] = new SelectList(_context.Branch, nameof(Branch.Id), nameof(Branch.Name));
@@ -56,6 +60,7 @@ namespace OurNewProject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create([Bind("Id,Name,Phone, myBranches")] Supplier supplier, int[] myBranches)
         {
             supplier.myBranches = new List<Branch>();
@@ -72,6 +77,7 @@ namespace OurNewProject.Controllers
         }
 
         // GET: Suppliers/Edit/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -93,6 +99,7 @@ namespace OurNewProject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Phone")] Supplier supplier, int[] myBranches)
         {
             if (id != supplier.Id)
@@ -137,6 +144,7 @@ namespace OurNewProject.Controllers
         }
 
         // GET: Suppliers/Delete/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

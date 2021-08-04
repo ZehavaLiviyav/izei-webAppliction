@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -20,12 +21,14 @@ namespace OurNewProject.Controllers
         }
 
         // GET: Branches
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Branch.ToListAsync());
         }
 
         // GET: Branches/Details/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -44,10 +47,9 @@ namespace OurNewProject.Controllers
         }
 
         // GET: Branches/Create
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
-
-            ModelState.AddModelError("Phone", "מספר הטלפון חייב להתחיל ב 05 , 10 מספרים");
             ViewData["Suppliers"] = new SelectList(_context.Supplier, nameof(Supplier.Id), nameof(Supplier.Name));
 
             return View();
@@ -58,6 +60,7 @@ namespace OurNewProject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create([Bind("Id,Name,Phone,Address,Hours,mySupplier")] Branch branch, int[] mySupplier)
         {
 
@@ -75,6 +78,7 @@ namespace OurNewProject.Controllers
         }
 
         // GET: Branches/Edit/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
             ViewData["Suppliers"] = new SelectList(_context.Supplier, nameof(Supplier.Id), nameof(Supplier.Name));
@@ -97,6 +101,7 @@ namespace OurNewProject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Phone,Address,Hours,mySuppliers")] Branch branch, int[] mySuppliers)
         {
             if (id != branch.Id)
@@ -128,6 +133,7 @@ namespace OurNewProject.Controllers
         }
 
         // GET: Branches/Delete/5
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -160,7 +166,9 @@ namespace OurNewProject.Controllers
         {
             return _context.Branch.Any(e => e.Id == id);
         }
-        public async Task<IActionResult> TheBranch() { return View(await _context.Branch.ToListAsync()); }
+        public async Task<IActionResult> TheBranch() {
+            return View(await _context.Branch.ToListAsync()); 
+        }
 
     }
 }

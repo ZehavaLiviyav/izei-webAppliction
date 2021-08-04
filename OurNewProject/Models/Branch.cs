@@ -8,8 +8,10 @@ namespace OurNewProject.Models
 {
     public class Branch
     {
+
         [Key]
         public int Id { get; set; }
+        [RegularExpression(@"^[א-ת ]+$", ErrorMessage = "שם הסניף חייבת להיות אותיות בעברית בלבד ")]
         [Display(Name = "שם")]
         [Required]
         public string Name { get; set; }
@@ -17,8 +19,9 @@ namespace OurNewProject.Models
         [Display(Name = "מספר טלפון")]
         [DataType(DataType.PhoneNumber)]
         [RegularExpression(@"^[0-9\s]*$")]
+        [StringLength(9, MinimumLength = 9, ErrorMessage = "מספר טלפון חייב להיות 9 מספרים")]
         public String Phone { get; set; }
-        [Required]
+        [Required] 
         [Display(Name = "כתובת")]
         public String Address { get; set; }
         [Required]

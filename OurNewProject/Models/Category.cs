@@ -11,6 +11,8 @@ namespace OurNewProject.Models
         [Key]
         public int Id { get; set; }
         [Required]
+        [RegularExpression(@"^[א-ת ]+$", ErrorMessage = "שם הקטגוריה חייבת להיות אותיות בעברית בלבד ")]
+        
         [Display(Name = "שם קטגוריה")]
         public string Name { get; set; }
         [Display(Name = "מוצרים")]

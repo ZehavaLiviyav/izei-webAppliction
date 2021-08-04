@@ -11,10 +11,12 @@ namespace OurNewProject.Models
 
         [Key]
         public int Id { get; set; }
+        [RegularExpression(@"^[א-ת ]+$", ErrorMessage = "שם המוצר חייב להיות אותיות בעברית בלבד ")]
         [Display(Name = "שם")]
         [Required]
         public String Name { get; set; }
         [Required]
+        [RegularExpression(@"^[0-9\s]*$",ErrorMessage = "המחיר חייב להכיל מספרים בלבד")]
         [Display(Name = "מחיר")]
         public double Price { get; set; }
         [Required]

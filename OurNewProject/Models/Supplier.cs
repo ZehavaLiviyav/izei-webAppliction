@@ -11,9 +11,13 @@ namespace OurNewProject.Models
         [Key]
         public int Id { get; set; }
         [Required]
+        [RegularExpression(@"^[א-ת ]+$", ErrorMessage = "שם הספק חייב להיות אותיות בעברית בלבד ")]
+
         [Display(Name = "שם")]
         public string Name { get; set; }
         [Required]
+        [RegularExpression(@"^[0-9\s]*$")]
+        [StringLength(10, MinimumLength = 10, ErrorMessage = "מספר טלפון חייב להיות 10 מספרים")]
         [Display(Name = "מספר טלפון")]
         public String Phone { get; set; }
         [Display(Name = "סניפים")]

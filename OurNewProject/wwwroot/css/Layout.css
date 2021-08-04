@@ -1,9 +1,9 @@
 ﻿@import url(http://fonts.googleapis.com/earlyaccess/alefhebrew.css);
 
 .navbar {
-  /*  max-width: none;*/
+    /*  max-width: none;*/
     background: #090e46;
-   /* height: 123px;
+    /* height: 123px;
     overflow: visible;
     margin-top: 0;
     -webkit-transition: all .3s ease-out;
@@ -16,6 +16,7 @@ AS {
     color: #fff !important;
     background-color: #090e46;
 }
+
 .menu li a {
     color: #d6d6a2;
     padding: 6px 10px;
