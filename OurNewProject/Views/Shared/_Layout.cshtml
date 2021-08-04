@@ -14,9 +14,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bona+Nova:ital@0;1&family=Tinos:ital,wght@0,400;1,400;1,700&display=swap" rel="stylesheet">
-
-
-    
 </head>
 
 <body >
@@ -26,7 +23,7 @@
             <div class="container">
 
 
-                <button class="navbar-toggler"  style="color: #d6d6a2" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                <button class="navbar-toggler" style="color: #d6d6a2" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -54,10 +51,9 @@
                             <a class="nav-link" style="font-family: 'Bona Nova', serif; color: #d6d6a2" asp-area="" asp-controller="Branches" asp-action="TheBranch">סניפים</a>
                         </li>
 
+
                         @if (Context.User.IsInRole("Admin"))
                         {
-                            
-            
 
 
                             <li class="nav-item dropdown">
@@ -93,6 +89,15 @@
                     </ul>
                 </div>
             </div>
+
+            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0"></script>
+            <div class=" p-t-8 p-b-31" style="color:aliceblue">
+                <a href="#">
+                    <div class="fb-like" data-href="https://www.facebook.com/IZEI-Ice-Cream-752659138801831/?ref=pages_you_manage" data-width="" data-action="like" data-size="small" data-share="true"></div>
+                    <!---->
+                </a>
+            </div>
+
         </nav>
     </header>
     <div class="container">
@@ -106,16 +111,9 @@
     <footer class="w3-center AS w3-padding-64 " style="background-color: #090e46 ">
         <div class="w3-button" id="to-top" style="color:#d6d6a2" title="back to top"> <b> ↑ </b> </div>
 
+
+
         <div class="w3-xlarge w3-section">
-            
-            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0"></script>
-            <div class="text-center p-t-8 p-b-31">
-                <a href="#">
-                    <div class="fb-like" data-href="https://www.facebook.com/IZEI-Ice-Cream-752659138801831/?ref=pages_you_manage" data-width="" data-action="like" data-size="small" data-share="true"></div>
-                    <!---->
-                </a>
-            </div>
-            
             <a target="_blank" style="color:#d6d6a2" href="https://www.facebook.com/IZEI-Ice-Cream-752659138801831/?ref=pages_you_manage"><i style="color:#d6d6a2" class="fa fa-facebook-official "></i></a>
         </div>
 

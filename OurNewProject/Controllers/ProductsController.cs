@@ -174,18 +174,7 @@ namespace OurNewProject.Controllers
         {
             return _context.Product.Any(e => e.Id == id);
         }
-        /*public async Task<IActionResult> Menu()
-        {
-            var ProjectContext = _context.Product.Include(c => c.Category);
-            return View(await ProjectContext.ToListAsync());
-        }
-        public async Task<IActionResult> Buttom(string ctN)
-        {
-            var ProjectContext = _context.Product.Include(c => c.Category).Where(p => p.Category.Name.Equals(ctN) ||
-                                    (ctN == null));
-            return View("Menu", await ProjectContext.ToListAsync());
-        }*/
-
+   
        
         public async Task<IActionResult> Menu()
         {

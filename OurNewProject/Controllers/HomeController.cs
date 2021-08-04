@@ -26,17 +26,9 @@ namespace OurNewProject.Controllers
             return View();
         }
 
-        public IActionResult Rishon(){ return View();}
-        public IActionResult BeerS() { return View(); }
-        public IActionResult Eilat() { return View(); }
-        public IActionResult Jerusalem() { return View(); }
-      
-
 
         public IActionResult Gallery() { return View(); }
-
-
-  public IActionResult YouKnow() { return View(); }
+        public IActionResult YouKnow() { return View(); }
         public IActionResult About() { return View(); }
    
         public IActionResult Team() { return View(); }
