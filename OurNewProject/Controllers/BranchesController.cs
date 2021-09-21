@@ -13,6 +13,7 @@ namespace OurNewProject.Controllers
 {
     public class BranchesController : Controller
     {
+
         private readonly OurNewProjectContext _context;
 
         public BranchesController(OurNewProjectContext context)
